@@ -46,7 +46,10 @@ func walk(direction):
 	$AnimatedSprite2D.flip_h = velocity.x > 0
 
 func vai_para_a_cena_da_porta():
+	
 	print("Entrando na proxima cena...")
+	var fade = get_tree().current_scene.get_node("FadeLayer")
+	fade.fade_and_change_scene(target_door.next_scene)
 	get_tree().change_scene_to_file(target_door.next_scene)
 	target_door = null
 

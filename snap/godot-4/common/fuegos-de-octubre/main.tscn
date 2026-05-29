@@ -11,6 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://cuts1pigsv8rf" path="res://assets/backgrounds/Layer04C.png" id="9_yaehf"]
 [ext_resource type="Texture2D" uid="uid://umkww4jj5rg6" path="res://assets/characters/1-Navigation/Walk Sprite-Sheet.png" id="10_4c57u"]
 [ext_resource type="Texture2D" uid="uid://d3qaeq408xjil" path="res://assets/backgrounds/tunel-perspectiva.jpeg" id="12_ycdy4"]
+[ext_resource type="PackedScene" uid="uid://dyxstgyjsb7g7" path="res://FadeLayer.tscn" id="13_ycdy4"]
 [ext_resource type="PackedScene" uid="uid://dstgffvb828kd" path="res://Door.tscn" id="14_w48qg"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_074og"]
@@ -135,17 +136,6 @@ scale = Vector2(3.829, 3.829)
 texture = ExtResource("9_yaehf")
 centered = false
 
-[node name="DoorLeft" type="Sprite2D" parent="." unique_id=350929500]
-position = Vector2(91, 566.66034)
-scale = Vector2(8.375, 7.742925)
-texture = ExtResource("12_ycdy4")
-
-[node name="DoorRight" type="Sprite2D" parent="." unique_id=1375728490]
-position = Vector2(1063.25, 566.25)
-scale = Vector2(7.9062495, 7.9062495)
-texture = ExtResource("12_ycdy4")
-flip_h = true
-
 [node name="Player" type="CharacterBody2D" parent="." unique_id=2052322699 groups=["player"]]
 z_index = 1
 position = Vector2(571, 580)
@@ -176,4 +166,29 @@ shape = SubResource("RectangleShape2D_efxa6")
 position = Vector2(577.125, 641)
 shape = SubResource("RectangleShape2D_dg77c")
 
-[node name="Door" parent="." unique_id=185453454 instance=ExtResource("14_w48qg")]
+[node name="CenterDoor" parent="." unique_id=185453454 instance=ExtResource("14_w48qg")]
+
+[node name="LeftDoor" parent="." unique_id=1108002175 instance=ExtResource("14_w48qg")]
+position = Vector2(-496, 0)
+
+[node name="SpriteDoor" parent="LeftDoor" index="0" unique_id=625106910]
+texture = ExtResource("12_ycdy4")
+
+[node name="CollisionShape2D" parent="LeftDoor/Area2D" parent_id_path=PackedInt32Array(1108002175, 2018634998) index="0" unique_id=2139364499]
+position = Vector2(556, 577)
+
+[node name="RightDoor" parent="." unique_id=253665186 instance=ExtResource("14_w48qg")]
+position = Vector2(130, 0)
+
+[node name="SpriteDoor" parent="RightDoor" index="0" unique_id=625106910]
+position = Vector2(936.25, 570.25)
+texture = ExtResource("12_ycdy4")
+flip_h = true
+
+[node name="CollisionShape2D" parent="RightDoor/Area2D" parent_id_path=PackedInt32Array(253665186, 2018634998) index="0" unique_id=2139364499]
+position = Vector2(957, 579)
+
+[node name="FadeLayer" parent="." unique_id=985700339 instance=ExtResource("13_ycdy4")]
+
+[editable path="LeftDoor"]
+[editable path="RightDoor"]
