@@ -8,11 +8,10 @@
 [ext_resource type="Texture2D" uid="uid://cvx66nh4m0mdl" path="res://assets/backgrounds/Layer03.png" id="6_w48qg"]
 [ext_resource type="Texture2D" uid="uid://e61i420savva" path="res://assets/backgrounds/Layer04.png" id="7_vivmo"]
 [ext_resource type="Texture2D" uid="uid://b4nl12b3r41wp" path="res://assets/backgrounds/Layer4B.png" id="8_2cqfq"]
-[ext_resource type="Texture2D" uid="uid://5c0v0wnjt232" path="res://assets/backgrounds/tunel.jpeg" id="8_dg77c"]
 [ext_resource type="Texture2D" uid="uid://cuts1pigsv8rf" path="res://assets/backgrounds/Layer04C.png" id="9_yaehf"]
 [ext_resource type="Texture2D" uid="uid://umkww4jj5rg6" path="res://assets/characters/1-Navigation/Walk Sprite-Sheet.png" id="10_4c57u"]
 [ext_resource type="Texture2D" uid="uid://d3qaeq408xjil" path="res://assets/backgrounds/tunel-perspectiva.jpeg" id="12_ycdy4"]
-[ext_resource type="Script" uid="uid://t1x4nvvnbqmb" path="res://scripts/doorCenter/area_2d.gd" id="13_ycdy4"]
+[ext_resource type="PackedScene" uid="uid://dstgffvb828kd" path="res://Door.tscn" id="14_w48qg"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_074og"]
 atlas = ExtResource("1_kek77")
@@ -99,9 +98,6 @@ size = Vector2(22.25, 652)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dg77c"]
 size = Vector2(1141.75, 20)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_w48qg"]
-size = Vector2(64, 97)
-
 [node name="Main" type="Node2D" unique_id=747488617]
 
 [node name="Backgound" type="Sprite2D" parent="." unique_id=326889569]
@@ -180,17 +176,4 @@ shape = SubResource("RectangleShape2D_efxa6")
 position = Vector2(577.125, 641)
 shape = SubResource("RectangleShape2D_dg77c")
 
-[node name="DoorCenterNode" type="Node2D" parent="." unique_id=1431669589]
-
-[node name="DoorCenter" type="Sprite2D" parent="DoorCenterNode" unique_id=2065633844]
-position = Vector2(577, 570)
-scale = Vector2(7.2812514, 7.2812514)
-texture = ExtResource("8_dg77c")
-region_rect = Rect2(0, 0, 19, 0)
-
-[node name="Area2D" type="Area2D" parent="DoorCenterNode" unique_id=1420720473]
-script = ExtResource("13_ycdy4")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="DoorCenterNode/Area2D" unique_id=1248120165]
-position = Vector2(576, 580.5)
-shape = SubResource("RectangleShape2D_w48qg")
+[node name="Door" parent="." unique_id=185453454 instance=ExtResource("14_w48qg")]

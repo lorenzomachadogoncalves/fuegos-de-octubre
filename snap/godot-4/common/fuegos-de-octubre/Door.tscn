@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://dstgffvb828kd"]
+
+[ext_resource type="Texture2D" uid="uid://5c0v0wnjt232" path="res://assets/backgrounds/tunel.jpeg" id="1_iu8q0"]
+[ext_resource type="Script" uid="uid://t1x4nvvnbqmb" path="res://scripts/doorCenter/area_2d.gd" id="2_cuixy"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jbk66"]
+size = Vector2(64, 97)
+
+[node name="Door" type="Node2D" unique_id=185453454]
+
+[node name="DoorCenter" type="Sprite2D" parent="." unique_id=625106910]
+position = Vector2(577, 570)
+scale = Vector2(7.2812514, 7.2812514)
+texture = ExtResource("1_iu8q0")
+region_rect = Rect2(0, 0, 19, 0)
+
+[node name="Area2D" type="Area2D" parent="." unique_id=2018634998]
+script = ExtResource("2_cuixy")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=2139364499]
+position = Vector2(576, 580.5)
+shape = SubResource("RectangleShape2D_jbk66")
