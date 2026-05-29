@@ -12,6 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://cuts1pigsv8rf" path="res://assets/backgrounds/Layer04C.png" id="9_yaehf"]
 [ext_resource type="Texture2D" uid="uid://umkww4jj5rg6" path="res://assets/characters/1-Navigation/Walk Sprite-Sheet.png" id="10_4c57u"]
 [ext_resource type="Texture2D" uid="uid://d3qaeq408xjil" path="res://assets/backgrounds/tunel-perspectiva.jpeg" id="12_ycdy4"]
+[ext_resource type="Script" uid="uid://t1x4nvvnbqmb" path="res://scripts/doorCenter/area_2d.gd" id="13_ycdy4"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_074og"]
 atlas = ExtResource("1_kek77")
@@ -98,6 +99,9 @@ size = Vector2(22.25, 652)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dg77c"]
 size = Vector2(1141.75, 20)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_w48qg"]
+size = Vector2(64, 97)
+
 [node name="Main" type="Node2D" unique_id=747488617]
 
 [node name="Backgound" type="Sprite2D" parent="." unique_id=326889569]
@@ -135,23 +139,19 @@ scale = Vector2(3.829, 3.829)
 texture = ExtResource("9_yaehf")
 centered = false
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=2065633844]
-position = Vector2(577, 570)
-scale = Vector2(7.2812514, 7.2812514)
-texture = ExtResource("8_dg77c")
-
-[node name="Sprite2D2" type="Sprite2D" parent="." unique_id=350929500]
+[node name="DoorLeft" type="Sprite2D" parent="." unique_id=350929500]
 position = Vector2(91, 566.66034)
 scale = Vector2(8.375, 7.742925)
 texture = ExtResource("12_ycdy4")
 
-[node name="Sprite2D3" type="Sprite2D" parent="." unique_id=1375728490]
+[node name="DoorRight" type="Sprite2D" parent="." unique_id=1375728490]
 position = Vector2(1063.25, 566.25)
 scale = Vector2(7.9062495, 7.9062495)
 texture = ExtResource("12_ycdy4")
 flip_h = true
 
-[node name="Player" type="CharacterBody2D" parent="." unique_id=2052322699]
+[node name="Player" type="CharacterBody2D" parent="." unique_id=2052322699 groups=["player"]]
+z_index = 1
 position = Vector2(571, 580)
 scale = Vector2(2, 2)
 script = ExtResource("1_4c57u")
@@ -179,3 +179,18 @@ shape = SubResource("RectangleShape2D_efxa6")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2" unique_id=1154733733]
 position = Vector2(577.125, 641)
 shape = SubResource("RectangleShape2D_dg77c")
+
+[node name="DoorCenterNode" type="Node2D" parent="." unique_id=1431669589]
+
+[node name="DoorCenter" type="Sprite2D" parent="DoorCenterNode" unique_id=2065633844]
+position = Vector2(577, 570)
+scale = Vector2(7.2812514, 7.2812514)
+texture = ExtResource("8_dg77c")
+region_rect = Rect2(0, 0, 19, 0)
+
+[node name="Area2D" type="Area2D" parent="DoorCenterNode" unique_id=1420720473]
+script = ExtResource("13_ycdy4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DoorCenterNode/Area2D" unique_id=1248120165]
+position = Vector2(576, 580.5)
+shape = SubResource("RectangleShape2D_w48qg")
