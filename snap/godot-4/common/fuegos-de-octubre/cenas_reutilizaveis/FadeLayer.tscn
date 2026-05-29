@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://dyxstgyjsb7g7"]
 
 [ext_resource type="Script" uid="uid://dnxx0h3nwtpxo" path="res://scripts/FadeLayer.gd" id="1_51kwb"]
-[ext_resource type="Script" uid="uid://duimlmnmsn70l" path="res://canvas_layer.gd" id="1_dv612"]
+[ext_resource type="Script" uid="uid://duimlmnmsn70l" path="res://scripts/canvas_layer.gd" id="1_dv612"]
 
 [sub_resource type="Animation" id="Animation_b2r46"]
 length = 0.001

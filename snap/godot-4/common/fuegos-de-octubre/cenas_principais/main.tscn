@@ -11,8 +11,8 @@
 [ext_resource type="Texture2D" uid="uid://cuts1pigsv8rf" path="res://assets/backgrounds/Layer04C.png" id="9_yaehf"]
 [ext_resource type="Texture2D" uid="uid://umkww4jj5rg6" path="res://assets/characters/1-Navigation/Walk Sprite-Sheet.png" id="10_4c57u"]
 [ext_resource type="Texture2D" uid="uid://d3qaeq408xjil" path="res://assets/backgrounds/tunel-perspectiva.jpeg" id="12_ycdy4"]
-[ext_resource type="PackedScene" uid="uid://dyxstgyjsb7g7" path="res://FadeLayer.tscn" id="13_ycdy4"]
-[ext_resource type="PackedScene" uid="uid://dstgffvb828kd" path="res://Door.tscn" id="14_w48qg"]
+[ext_resource type="PackedScene" uid="uid://dyxstgyjsb7g7" path="res://cenas_reutilizaveis/FadeLayer.tscn" id="13_ycdy4"]
+[ext_resource type="PackedScene" uid="uid://dstgffvb828kd" path="res://cenas_reutilizaveis/Door.tscn" id="14_w48qg"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_074og"]
 atlas = ExtResource("1_kek77")
