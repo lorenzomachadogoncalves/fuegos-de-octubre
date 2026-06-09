@@ -4,6 +4,8 @@ extends CharacterBody2D
 
 var target_x
 var ground_y
+var target_door = null
+var door_clicked = false
 
 func _ready():
 
@@ -15,30 +17,44 @@ func _ready():
 func _physics_process(delta):
 
 	if Input.is_action_just_pressed("click"):
-
-		target_x = get_global_mouse_position().x
-
+		if not door_clicked:
+			print("nao clicou na porta")
+			target_door = null
+			target_x = get_global_mouse_position().x
 	var direction = target_x - global_position.x
-
 	if abs(direction) > 5:
-
-		velocity.x = sign(direction) * speed
-		velocity.y = 0
-
-		move_and_slide()
-
-		global_position.y = ground_y
-
-		if $AnimatedSprite2D.animation != "walk":
-			$AnimatedSprite2D.play("walk")
-
-		$AnimatedSprite2D.flip_h = velocity.x > 0
-
+		walk(direction)
 	else:
+		arrived_at_destination()
+	door_clicked = false
 
-		velocity = Vector2.ZERO
+func arrived_at_destination():
+	velocity = Vector2.ZERO
+	global_position.y = ground_y
+	if $AnimatedSprite2D.animation != "idle":
+		$AnimatedSprite2D.play("idle")
+	if target_door:
+		vai_para_a_cena_da_porta()
 
-		global_position.y = ground_y
+func walk(direction):
+	velocity.x = sign(direction) * speed
+	velocity.y = 0
+	move_and_slide()
+	global_position.y = ground_y
+	if $AnimatedSprite2D.animation != "walk":
+		$AnimatedSprite2D.play("walk")
+	$AnimatedSprite2D.flip_h = velocity.x > 0
 
-		if $AnimatedSprite2D.animation != "idle":
-			$AnimatedSprite2D.play("idle")
+func vai_para_a_cena_da_porta():
+	
+	print("Entrando na proxima cena...")
+	var fade = get_tree().current_scene.get_node("FadeLayer")
+	fade.fade_and_change_scene(target_door.next_scene)
+	get_tree().change_scene_to_file(target_door.next_scene)
+	target_door = null
+
+func move_to_door(door, x):
+	door_clicked = true
+	print("indo para a porta")
+	target_x = x
+	target_door = door
