@@ -10,10 +10,14 @@ config_version=5
 
 [application]
 
-config/name="fuegos de octubre"
+config/name="fuegos de outubro"
 run/main_scene="uid://wuov3qqkqij8"
 config/features=PackedStringArray("4.6", "Mobile")
 config/icon="res://icon.svg"
+
+[autoload]
+
+Global="*res://scripts/Global.gd"
 
 [dotnet]
 

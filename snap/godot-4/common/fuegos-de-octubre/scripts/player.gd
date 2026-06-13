@@ -8,6 +8,19 @@ var target_door = null
 var door_clicked = false
 
 func _ready():
+	if Global.target_door_name != "":
+		var target_door_node = get_tree().current_scene.find_child(Global.target_door_name, true, false)
+		if target_door_node:
+			var area = target_door_node.get_node_or_null("Area2D")
+			if area:
+				var shape = area.get_node_or_null("CollisionShape2D")
+				if shape:
+					global_position.x = shape.global_position.x
+				else:
+					global_position.x = target_door_node.global_position.x
+			else:
+				global_position.x = target_door_node.global_position.x
+		Global.target_door_name = ""
 
 	target_x = global_position.x
 	ground_y = global_position.y
@@ -46,12 +59,15 @@ func walk(direction):
 	$AnimatedSprite2D.flip_h = velocity.x > 0
 
 func vai_para_a_cena_da_porta():
-	
 	print("Entrando na proxima cena...")
-	var fade = get_tree().current_scene.get_node("FadeLayer")
-	fade.fade_and_change_scene(target_door.next_scene)
-	get_tree().change_scene_to_file(target_door.next_scene)
-	target_door = null
+	if target_door:
+		Global.target_door_name = target_door.target_door_name
+		var fade = get_tree().current_scene.get_node_or_null("FadeLayer")
+		if fade:
+			fade.fade_and_change_scene(target_door.next_scene)
+		else:
+			get_tree().change_scene_to_file(target_door.next_scene)
+		target_door = null
 
 func move_to_door(door, x):
 	door_clicked = true

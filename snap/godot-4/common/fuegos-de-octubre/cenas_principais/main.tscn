@@ -10,6 +10,8 @@
 [ext_resource type="Texture2D" uid="uid://b4nl12b3r41wp" path="res://assets/backgrounds/Layer4B.png" id="8_2cqfq"]
 [ext_resource type="Texture2D" uid="uid://cuts1pigsv8rf" path="res://assets/backgrounds/Layer04C.png" id="9_yaehf"]
 [ext_resource type="Texture2D" uid="uid://umkww4jj5rg6" path="res://assets/characters/1-Navigation/Walk Sprite-Sheet.png" id="10_4c57u"]
+[ext_resource type="Script" uid="uid://cp0n11nd0ixvp" path="res://dialog.gd" id="11_6vle7"]
+[ext_resource type="FontFile" uid="uid://c3278aec3xphj" path="res://PixelOperatorMono.ttf" id="12_bdgad"]
 [ext_resource type="Texture2D" uid="uid://d3qaeq408xjil" path="res://assets/backgrounds/tunel-perspectiva.jpeg" id="12_ycdy4"]
 [ext_resource type="PackedScene" uid="uid://dyxstgyjsb7g7" path="res://cenas_reutilizaveis/FadeLayer.tscn" id="13_ycdy4"]
 [ext_resource type="PackedScene" uid="uid://dstgffvb828kd" path="res://cenas_reutilizaveis/Door.tscn" id="14_w48qg"]
@@ -94,7 +96,7 @@ animations = [{
 size = Vector2(11.5, 47)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_efxa6"]
-size = Vector2(22.25, 652)
+size = Vector2(28.125, 652)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dg77c"]
 size = Vector2(1141.75, 20)
@@ -102,7 +104,7 @@ size = Vector2(1141.75, 20)
 [node name="Main" type="Node2D" unique_id=747488617]
 
 [node name="Backgound" type="Sprite2D" parent="." unique_id=326889569]
-scale = Vector2(3.829412, 3.8294115)
+scale = Vector2(3.8433332, 3.8294115)
 texture = ExtResource("3_efxa6")
 centered = false
 
@@ -150,10 +152,28 @@ animation = &"walk"
 position = Vector2(0.75, 1.5)
 shape = SubResource("RectangleShape2D_4c57u")
 
+[node name="CanvasLayer" type="CanvasLayer" parent="Player" unique_id=1201911135]
+script = ExtResource("11_6vle7")
+
+[node name="Panel" type="Panel" parent="Player/CanvasLayer" unique_id=1638547406]
+offset_right = 1153.0
+offset_bottom = 111.0
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Player/CanvasLayer/Panel" unique_id=1825218670]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/normal_font = ExtResource("12_bdgad")
+theme_override_font_sizes/normal_font_size = 44
+bbcode_enabled = true
+
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1154164830]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=88232166]
-position = Vector2(1137, 324)
+position = Vector2(1139.9375, 324)
 shape = SubResource("RectangleShape2D_efxa6")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D" unique_id=1095032882]
@@ -174,7 +194,11 @@ position = Vector2(-496, 0)
 [node name="SpriteDoor" parent="LeftDoor" index="0" unique_id=625106910]
 texture = ExtResource("12_ycdy4")
 
-[node name="CollisionShape2D" parent="LeftDoor/Area2D" parent_id_path=PackedInt32Array(1108002175, 2018634998) index="0" unique_id=2139364499]
+[node name="Area2D" parent="LeftDoor" index="1" unique_id=2018634998]
+next_scene = "res://cenas_principais/green_room.tscn"
+target_door_name = "RightDoor"
+
+[node name="CollisionShape2D" parent="LeftDoor/Area2D" index="0" unique_id=2139364499]
 position = Vector2(556, 577)
 
 [node name="RightDoor" parent="." unique_id=253665186 instance=ExtResource("14_w48qg")]
@@ -185,7 +209,10 @@ position = Vector2(936.25, 570.25)
 texture = ExtResource("12_ycdy4")
 flip_h = true
 
-[node name="CollisionShape2D" parent="RightDoor/Area2D" parent_id_path=PackedInt32Array(253665186, 2018634998) index="0" unique_id=2139364499]
+[node name="Area2D" parent="RightDoor" index="1" unique_id=2018634998]
+next_scene = "res://cenas_principais/blue_room.tscn"
+
+[node name="CollisionShape2D" parent="RightDoor/Area2D" index="0" unique_id=2139364499]
 position = Vector2(957, 579)
 
 [node name="FadeLayer" parent="." unique_id=985700339 instance=ExtResource("13_ycdy4")]

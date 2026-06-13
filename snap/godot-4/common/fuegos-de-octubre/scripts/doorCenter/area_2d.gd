@@ -1,6 +1,7 @@
 extends Area2D
 
 @export var next_scene : String
+@export var target_door_name : String
 
 func _input_event(viewport, event, shape_idx):
 
