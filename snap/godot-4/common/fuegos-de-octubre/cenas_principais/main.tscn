@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://wuov3qqkqij8"]
 
 [ext_resource type="Script" uid="uid://kobogdbefd27" path="res://scripts/player.gd" id="1_4c57u"]
+[ext_resource type="Script" uid="uid://bhc8ncxbls50p" path="res://cenas_principais/main.gd" id="1_ihyhs"]
 [ext_resource type="Texture2D" uid="uid://gxf05ei02atu" path="res://assets/characters/1-Navigation/3-4 Idle-Sheet.png" id="1_kek77"]
 [ext_resource type="Texture2D" uid="uid://c6i48y35osaec" path="res://assets/backgrounds/Layer0.png" id="3_efxa6"]
 [ext_resource type="Texture2D" uid="uid://cqmy1l6ljund8" path="res://assets/backgrounds/Layer01.png" id="4_dg77c"]
@@ -16,6 +17,7 @@
 [ext_resource type="PackedScene" uid="uid://dyxstgyjsb7g7" path="res://cenas_reutilizaveis/FadeLayer.tscn" id="13_ycdy4"]
 [ext_resource type="PackedScene" uid="uid://dstgffvb828kd" path="res://cenas_reutilizaveis/Door.tscn" id="14_w48qg"]
 [ext_resource type="PackedScene" uid="uid://d0ousav81v1m7" path="res://cenas_reutilizaveis/Cloud.tscn" id="17_bnx2b"]
+[ext_resource type="PackedScene" uid="uid://h5n8uphklens" path="res://cenas_reutilizaveis/ColorFilter.tscn" id="18_cf"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_074og"]
 atlas = ExtResource("1_kek77")
@@ -103,6 +105,7 @@ size = Vector2(28.125, 652)
 size = Vector2(1141.75, 20)
 
 [node name="Main" type="Node2D" unique_id=747488617]
+script = ExtResource("1_ihyhs")
 
 [node name="Backgound" type="Sprite2D" parent="." unique_id=326889569]
 scale = Vector2(3.8433332, 3.8294115)
@@ -253,6 +256,8 @@ next_scene = "res://cenas_principais/blue_room.tscn"
 
 [node name="CollisionShape2D" parent="RightDoor/Area2D" index="0" unique_id=2139364499]
 position = Vector2(957, 579)
+
+[node name="ColorFilter" parent="." unique_id=112233445 instance=ExtResource("18_cf")]
 
 [node name="FadeLayer" parent="." unique_id=985700339 instance=ExtResource("13_ycdy4")]
 visible = false
