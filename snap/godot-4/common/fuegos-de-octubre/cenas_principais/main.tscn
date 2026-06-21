@@ -3,7 +3,6 @@
 [ext_resource type="Script" uid="uid://kobogdbefd27" path="res://scripts/player.gd" id="1_4c57u"]
 [ext_resource type="Texture2D" uid="uid://gxf05ei02atu" path="res://assets/characters/1-Navigation/3-4 Idle-Sheet.png" id="1_kek77"]
 [ext_resource type="Texture2D" uid="uid://c6i48y35osaec" path="res://assets/backgrounds/Layer0.png" id="3_efxa6"]
-[ext_resource type="Texture2D" uid="uid://bsko6wtpvnyyv" path="res://assets/backgrounds/clouds.png" id="3_i30la"]
 [ext_resource type="Texture2D" uid="uid://cqmy1l6ljund8" path="res://assets/backgrounds/Layer01.png" id="4_dg77c"]
 [ext_resource type="Texture2D" uid="uid://botslb7s7ulcf" path="res://assets/backgrounds/Layer02.png" id="5_ycdy4"]
 [ext_resource type="Texture2D" uid="uid://cvx66nh4m0mdl" path="res://assets/backgrounds/Layer03.png" id="6_w48qg"]
@@ -137,20 +136,21 @@ speed = 8.0
 reset_x = -60.0
 start_x = 300.0
 
+[node name="Cloud5" parent="Backgound" unique_id=862205834 instance=ExtResource("17_bnx2b")]
+position = Vector2(129, 53)
+scale = Vector2(0.2601908, 0.2611367)
+speed = 8.0
+reset_x = -60.0
+start_x = 300.0
+
 [node name="Layer 1" type="Sprite2D" parent="." unique_id=1508286611]
 visible = false
 scale = Vector2(3.829, 3.829)
 texture = ExtResource("4_dg77c")
 centered = false
 
-[node name="clouds" type="Sprite2D" parent="." unique_id=1241518948]
-visible = false
-position = Vector2(575.5, 329)
-scale = Vector2(3.8433332, 3.8470588)
-texture = ExtResource("3_i30la")
-
 [node name="Layer 2" type="Sprite2D" parent="." unique_id=893432611]
-scale = Vector2(3.829, 3.829)
+scale = Vector2(3.846667, 3.829)
 texture = ExtResource("5_ycdy4")
 centered = false
 
@@ -255,6 +255,8 @@ next_scene = "res://cenas_principais/blue_room.tscn"
 position = Vector2(957, 579)
 
 [node name="FadeLayer" parent="." unique_id=985700339 instance=ExtResource("13_ycdy4")]
+visible = false
+position = Vector2(82, 24)
 
 [editable path="LeftDoor"]
 [editable path="RightDoor"]
