@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://d0ousav81v1m7"]
+
+[ext_resource type="Texture2D" uid="uid://cxpdelarvcdsb" path="res://assets/backgrounds/cloud.png" id="1_7fh0v"]
+[ext_resource type="Script" uid="uid://3e3sobdji5ck" path="res://scripts/cloud.gd" id="2_cloud"]
+
+[node name="Cloud" type="Node2D" unique_id=703674017]
+script = ExtResource("2_cloud")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1461377218]
+position = Vector2(59.66667, 41.000004)
+scale = Vector2(1.8888891, 2.4)
+texture = ExtResource("1_7fh0v")

@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://kobogdbefd27" path="res://scripts/player.gd" id="1_4c57u"]
 [ext_resource type="Texture2D" uid="uid://gxf05ei02atu" path="res://assets/characters/1-Navigation/3-4 Idle-Sheet.png" id="1_kek77"]
 [ext_resource type="Texture2D" uid="uid://c6i48y35osaec" path="res://assets/backgrounds/Layer0.png" id="3_efxa6"]
+[ext_resource type="Texture2D" uid="uid://bsko6wtpvnyyv" path="res://assets/backgrounds/clouds.png" id="3_i30la"]
 [ext_resource type="Texture2D" uid="uid://cqmy1l6ljund8" path="res://assets/backgrounds/Layer01.png" id="4_dg77c"]
 [ext_resource type="Texture2D" uid="uid://botslb7s7ulcf" path="res://assets/backgrounds/Layer02.png" id="5_ycdy4"]
 [ext_resource type="Texture2D" uid="uid://cvx66nh4m0mdl" path="res://assets/backgrounds/Layer03.png" id="6_w48qg"]
@@ -15,6 +16,7 @@
 [ext_resource type="Texture2D" uid="uid://d3qaeq408xjil" path="res://assets/backgrounds/tunel-perspectiva.jpeg" id="12_ycdy4"]
 [ext_resource type="PackedScene" uid="uid://dyxstgyjsb7g7" path="res://cenas_reutilizaveis/FadeLayer.tscn" id="13_ycdy4"]
 [ext_resource type="PackedScene" uid="uid://dstgffvb828kd" path="res://cenas_reutilizaveis/Door.tscn" id="14_w48qg"]
+[ext_resource type="PackedScene" uid="uid://d0ousav81v1m7" path="res://cenas_reutilizaveis/Cloud.tscn" id="17_bnx2b"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_074og"]
 atlas = ExtResource("1_kek77")
@@ -108,10 +110,44 @@ scale = Vector2(3.8433332, 3.8294115)
 texture = ExtResource("3_efxa6")
 centered = false
 
+[node name="Cloud" parent="Backgound" unique_id=703674017 instance=ExtResource("17_bnx2b")]
+scale = Vector2(0.2601908, 0.2611367)
+speed = 5.0
+reset_x = -60.0
+start_x = 300.0
+
+[node name="Cloud2" parent="Backgound" unique_id=1118250260 instance=ExtResource("17_bnx2b")]
+position = Vector2(92.10755, 17.235023)
+scale = Vector2(0.2601908, 0.2611367)
+speed = 5.0
+reset_x = -60.0
+start_x = 300.0
+
+[node name="Cloud3" parent="Backgound" unique_id=1282532956 instance=ExtResource("17_bnx2b")]
+position = Vector2(188.37814, 40.998463)
+scale = Vector2(0.2601908, 0.2611367)
+speed = 7.0
+reset_x = -60.0
+start_x = 300.0
+
+[node name="Cloud4" parent="Backgound" unique_id=494249893 instance=ExtResource("17_bnx2b")]
+position = Vector2(50.216827, 55.099846)
+scale = Vector2(0.2601908, 0.2611367)
+speed = 8.0
+reset_x = -60.0
+start_x = 300.0
+
 [node name="Layer 1" type="Sprite2D" parent="." unique_id=1508286611]
+visible = false
 scale = Vector2(3.829, 3.829)
 texture = ExtResource("4_dg77c")
 centered = false
+
+[node name="clouds" type="Sprite2D" parent="." unique_id=1241518948]
+visible = false
+position = Vector2(575.5, 329)
+scale = Vector2(3.8433332, 3.8470588)
+texture = ExtResource("3_i30la")
 
 [node name="Layer 2" type="Sprite2D" parent="." unique_id=893432611]
 scale = Vector2(3.829, 3.829)
@@ -124,16 +160,19 @@ texture = ExtResource("6_w48qg")
 centered = false
 
 [node name="Layer 4" type="Sprite2D" parent="." unique_id=703806740]
+visible = false
 scale = Vector2(3.829, 3.829)
 texture = ExtResource("7_vivmo")
 centered = false
 
 [node name="Layer 5" type="Sprite2D" parent="." unique_id=2044523040]
+visible = false
 scale = Vector2(3.829, 3.829)
 texture = ExtResource("8_2cqfq")
 centered = false
 
 [node name="Layer 6" type="Sprite2D" parent="." unique_id=296275024]
+visible = false
 scale = Vector2(3.829, 3.829)
 texture = ExtResource("9_yaehf")
 centered = false
