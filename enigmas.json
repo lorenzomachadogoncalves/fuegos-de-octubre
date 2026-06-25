@@ -1,0 +1,18 @@
+[
+    {
+        "frase": "Se o campo floresce, então as abelhas visitam o jardim.",
+        "correta": "P → Q"
+    },
+    {
+        "frase": "O jardim só canta quando a flor vermelha e a azul florescem juntas.",
+        "correta": "P ∧ Q"
+    },
+    {
+        "frase": "O lago cintila quando a lua aparece ou os vaga-lumes despertam.",
+        "correta": "P ∨ Q"
+    },
+    {
+        "frase": "Nesta noite tranquila, a flor verde não floresce.",
+        "correta": "¬P"
+    }
+]
