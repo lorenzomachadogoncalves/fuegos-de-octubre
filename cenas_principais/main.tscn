@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://wuov3qqkqij8"]
 
 [ext_resource type="Script" uid="uid://kobogdbefd27" path="res://scripts/player.gd" id="1_4c57u"]
+[ext_resource type="Script" uid="uid://bhc8ncxbls50p" path="res://cenas_principais/main.gd" id="1_ihyhs"]
 [ext_resource type="Texture2D" uid="uid://gxf05ei02atu" path="res://assets/characters/1-Navigation/3-4 Idle-Sheet.png" id="1_kek77"]
 [ext_resource type="Texture2D" uid="uid://c6i48y35osaec" path="res://assets/backgrounds/Layer0.png" id="3_efxa6"]
 [ext_resource type="Texture2D" uid="uid://cqmy1l6ljund8" path="res://assets/backgrounds/Layer01.png" id="4_dg77c"]
@@ -15,6 +16,8 @@
 [ext_resource type="Texture2D" uid="uid://d3qaeq408xjil" path="res://assets/backgrounds/tunel-perspectiva.jpeg" id="12_ycdy4"]
 [ext_resource type="PackedScene" uid="uid://dyxstgyjsb7g7" path="res://cenas_reutilizaveis/FadeLayer.tscn" id="13_ycdy4"]
 [ext_resource type="PackedScene" uid="uid://dstgffvb828kd" path="res://cenas_reutilizaveis/Door.tscn" id="14_w48qg"]
+[ext_resource type="PackedScene" uid="uid://d0ousav81v1m7" path="res://cenas_reutilizaveis/Cloud.tscn" id="19_cloud"]
+[ext_resource type="PackedScene" uid="uid://h5n8uphklens" path="res://cenas_reutilizaveis/ColorFilter.tscn" id="18_cf"]
 [ext_resource type="Texture2D" uid="uid://4gyu2ipq6q04" path="res://assets/backgrounds/initial-totem.png" id="17_bnx2b"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_074og"]
@@ -106,19 +109,55 @@ size = Vector2(1141.75, 20)
 size = Vector2(14.441879, 29.534882)
 
 [node name="Main" type="Node2D" unique_id=747488617]
+script = ExtResource("1_ihyhs")
 
 [node name="Backgound" type="Sprite2D" parent="." unique_id=326889569]
 scale = Vector2(3.8433332, 3.8294115)
 texture = ExtResource("3_efxa6")
 centered = false
 
+[node name="Cloud" parent="Backgound" unique_id=703674017 instance=ExtResource("19_cloud")]
+scale = Vector2(0.2601908, 0.2611367)
+speed = 5.0
+reset_x = -60.0
+start_x = 300.0
+
+[node name="Cloud2" parent="Backgound" unique_id=1118250260 instance=ExtResource("19_cloud")]
+position = Vector2(92.10755, 17.235023)
+scale = Vector2(0.2601908, 0.2611367)
+speed = 5.0
+reset_x = -60.0
+start_x = 300.0
+
+[node name="Cloud3" parent="Backgound" unique_id=1282532956 instance=ExtResource("19_cloud")]
+position = Vector2(188.37814, 40.998463)
+scale = Vector2(0.2601908, 0.2611367)
+speed = 7.0
+reset_x = -60.0
+start_x = 300.0
+
+[node name="Cloud4" parent="Backgound" unique_id=494249893 instance=ExtResource("19_cloud")]
+position = Vector2(50.216827, 55.099846)
+scale = Vector2(0.2601908, 0.2611367)
+speed = 8.0
+reset_x = -60.0
+start_x = 300.0
+
+[node name="Cloud5" parent="Backgound" unique_id=862205834 instance=ExtResource("19_cloud")]
+position = Vector2(129, 53)
+scale = Vector2(0.2601908, 0.2611367)
+speed = 8.0
+reset_x = -60.0
+start_x = 300.0
+
 [node name="Layer 1" type="Sprite2D" parent="." unique_id=1508286611]
+visible = false
 scale = Vector2(3.829, 3.829)
 texture = ExtResource("4_dg77c")
 centered = false
 
 [node name="Layer 2" type="Sprite2D" parent="." unique_id=893432611]
-scale = Vector2(3.829, 3.829)
+scale = Vector2(3.846667, 3.829)
 texture = ExtResource("5_ycdy4")
 centered = false
 
@@ -128,16 +167,19 @@ texture = ExtResource("6_w48qg")
 centered = false
 
 [node name="Layer 4" type="Sprite2D" parent="." unique_id=703806740]
+visible = false
 scale = Vector2(3.829, 3.829)
 texture = ExtResource("7_vivmo")
 centered = false
 
 [node name="Layer 5" type="Sprite2D" parent="." unique_id=2044523040]
+visible = false
 scale = Vector2(3.829, 3.829)
 texture = ExtResource("8_2cqfq")
 centered = false
 
 [node name="Layer 6" type="Sprite2D" parent="." unique_id=296275024]
+visible = false
 scale = Vector2(3.829, 3.829)
 texture = ExtResource("9_yaehf")
 centered = false
@@ -219,7 +261,11 @@ next_scene = "res://cenas_principais/blue_room.tscn"
 [node name="CollisionShape2D" parent="RightDoor/Area2D" index="0" unique_id=2139364499]
 position = Vector2(957, 579)
 
+[node name="ColorFilter" parent="." unique_id=112233445 instance=ExtResource("18_cf")]
+
 [node name="FadeLayer" parent="." unique_id=985700339 instance=ExtResource("13_ycdy4")]
+visible = false
+position = Vector2(82, 24)
 
 [node name="InitialTotem" type="Sprite2D" parent="." unique_id=35416649]
 position = Vector2(839.00006, 561.99994)

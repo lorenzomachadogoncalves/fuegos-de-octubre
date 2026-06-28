@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://h5n8uphklens"]
+
+[ext_resource type="Script" path="res://scripts/color_filter.gd" id="1_cf"]
+[ext_resource type="Shader" path="res://scripts/grayscale.gdshader" id="2_gs"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_1"]
+shader = ExtResource("2_gs")
+shader_parameter/color_amount = 0.0
+
+[node name="ColorFilter" type="CanvasLayer"]
+layer = 2
+script = ExtResource("1_cf")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+material = SubResource("ShaderMaterial_1")
+color = Color(1, 1, 1, 1)
