@@ -16,8 +16,9 @@
 [ext_resource type="Texture2D" uid="uid://d3qaeq408xjil" path="res://assets/backgrounds/tunel-perspectiva.jpeg" id="12_ycdy4"]
 [ext_resource type="PackedScene" uid="uid://dyxstgyjsb7g7" path="res://cenas_reutilizaveis/FadeLayer.tscn" id="13_ycdy4"]
 [ext_resource type="PackedScene" uid="uid://dstgffvb828kd" path="res://cenas_reutilizaveis/Door.tscn" id="14_w48qg"]
-[ext_resource type="PackedScene" uid="uid://d0ousav81v1m7" path="res://cenas_reutilizaveis/Cloud.tscn" id="17_bnx2b"]
+[ext_resource type="PackedScene" uid="uid://d0ousav81v1m7" path="res://cenas_reutilizaveis/Cloud.tscn" id="19_cloud"]
 [ext_resource type="PackedScene" uid="uid://h5n8uphklens" path="res://cenas_reutilizaveis/ColorFilter.tscn" id="18_cf"]
+[ext_resource type="Texture2D" uid="uid://4gyu2ipq6q04" path="res://assets/backgrounds/initial-totem.png" id="17_bnx2b"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_074og"]
 atlas = ExtResource("1_kek77")
@@ -104,6 +105,9 @@ size = Vector2(28.125, 652)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dg77c"]
 size = Vector2(1141.75, 20)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_i30la"]
+size = Vector2(14.441879, 29.534882)
+
 [node name="Main" type="Node2D" unique_id=747488617]
 script = ExtResource("1_ihyhs")
 
@@ -112,34 +116,34 @@ scale = Vector2(3.8433332, 3.8294115)
 texture = ExtResource("3_efxa6")
 centered = false
 
-[node name="Cloud" parent="Backgound" unique_id=703674017 instance=ExtResource("17_bnx2b")]
+[node name="Cloud" parent="Backgound" unique_id=703674017 instance=ExtResource("19_cloud")]
 scale = Vector2(0.2601908, 0.2611367)
 speed = 5.0
 reset_x = -60.0
 start_x = 300.0
 
-[node name="Cloud2" parent="Backgound" unique_id=1118250260 instance=ExtResource("17_bnx2b")]
+[node name="Cloud2" parent="Backgound" unique_id=1118250260 instance=ExtResource("19_cloud")]
 position = Vector2(92.10755, 17.235023)
 scale = Vector2(0.2601908, 0.2611367)
 speed = 5.0
 reset_x = -60.0
 start_x = 300.0
 
-[node name="Cloud3" parent="Backgound" unique_id=1282532956 instance=ExtResource("17_bnx2b")]
+[node name="Cloud3" parent="Backgound" unique_id=1282532956 instance=ExtResource("19_cloud")]
 position = Vector2(188.37814, 40.998463)
 scale = Vector2(0.2601908, 0.2611367)
 speed = 7.0
 reset_x = -60.0
 start_x = 300.0
 
-[node name="Cloud4" parent="Backgound" unique_id=494249893 instance=ExtResource("17_bnx2b")]
+[node name="Cloud4" parent="Backgound" unique_id=494249893 instance=ExtResource("19_cloud")]
 position = Vector2(50.216827, 55.099846)
 scale = Vector2(0.2601908, 0.2611367)
 speed = 8.0
 reset_x = -60.0
 start_x = 300.0
 
-[node name="Cloud5" parent="Backgound" unique_id=862205834 instance=ExtResource("17_bnx2b")]
+[node name="Cloud5" parent="Backgound" unique_id=862205834 instance=ExtResource("19_cloud")]
 position = Vector2(129, 53)
 scale = Vector2(0.2601908, 0.2611367)
 speed = 8.0
@@ -214,17 +218,17 @@ bbcode_enabled = true
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1154164830]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=88232166]
+[node name="Parede direita" type="CollisionShape2D" parent="StaticBody2D" unique_id=88232166]
 position = Vector2(1139.9375, 324)
 shape = SubResource("RectangleShape2D_efxa6")
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D" unique_id=1095032882]
+[node name="Parede esquerda" type="CollisionShape2D" parent="StaticBody2D" unique_id=1095032882]
 position = Vector2(11, 325)
 shape = SubResource("RectangleShape2D_efxa6")
 
 [node name="StaticBody2D2" type="StaticBody2D" parent="." unique_id=70322410]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2" unique_id=1154733733]
+[node name="Chão" type="CollisionShape2D" parent="StaticBody2D2" unique_id=1154733733]
 position = Vector2(577.125, 641)
 shape = SubResource("RectangleShape2D_dg77c")
 
@@ -237,11 +241,11 @@ position = Vector2(-496, 0)
 texture = ExtResource("12_ycdy4")
 
 [node name="Area2D" parent="LeftDoor" index="1" unique_id=2018634998]
-next_scene = "res://cenas_principais/green_room.tscn"
-target_door_name = "RightDoor"
+next_scene = "res://cenas_principais/caverna-azul.tscn"
+target_door_name = "Tunel Perspectiva"
 
 [node name="CollisionShape2D" parent="LeftDoor/Area2D" index="0" unique_id=2139364499]
-position = Vector2(556, 577)
+position = Vector2(554.5, 571)
 
 [node name="RightDoor" parent="." unique_id=253665186 instance=ExtResource("14_w48qg")]
 position = Vector2(130, 0)
@@ -262,6 +266,18 @@ position = Vector2(957, 579)
 [node name="FadeLayer" parent="." unique_id=985700339 instance=ExtResource("13_ycdy4")]
 visible = false
 position = Vector2(82, 24)
+
+[node name="InitialTotem" type="Sprite2D" parent="." unique_id=35416649]
+position = Vector2(839.00006, 561.99994)
+scale = Vector2(3.0714285, 3.0714285)
+texture = ExtResource("17_bnx2b")
+
+[node name="Area2D" type="Area2D" parent="InitialTotem" unique_id=1564487095]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InitialTotem/Area2D" unique_id=1722086223]
+position = Vector2(-0.05819702, 7.697708)
+scale = Vector2(1.0000005, 1.0000005)
+shape = SubResource("RectangleShape2D_i30la")
 
 [editable path="LeftDoor"]
 [editable path="RightDoor"]

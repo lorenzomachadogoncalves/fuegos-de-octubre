@@ -31,5 +31,5 @@ func avancar():
 	texto.text = falas[indice]
 
 func _input(event):
-	if event.is_action_pressed("ui_accept") and $Panel.visible:
+	if event is InputEventMouseButton and event.pressed and $Panel.visible:
 		avancar()

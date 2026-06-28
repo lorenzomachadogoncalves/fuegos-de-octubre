@@ -1,0 +1,121 @@
+[gd_scene format=3 uid="uid://dvu71m4yg3anc"]
+
+[ext_resource type="FontFile" uid="uid://c3278aec3xphj" path="res://PixelOperatorMono.ttf" id="1_cn1i6"]
+[ext_resource type="Script" uid="uid://bkar6idttm2kl" path="res://riddle_box.gd" id="1_udhur"]
+[ext_resource type="Texture2D" uid="uid://dvhv32i6bqayt" path="res://assets/objects/red-flower.png" id="3_a3ewr"]
+[ext_resource type="Texture2D" uid="uid://67dajpnwgaqq" path="res://assets/objects/green-flower.png" id="4_o3apd"]
+[ext_resource type="Texture2D" uid="uid://dghh6m8oofkx3" path="res://assets/objects/blue-flower.png" id="5_0fu26"]
+
+[node name="RiddleBox" type="Node2D" unique_id=1739927017]
+script = ExtResource("1_udhur")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1507817598]
+
+[node name="Panel" type="Panel" parent="CanvasLayer" unique_id=2132248763]
+offset_left = 201.0
+offset_top = 102.0
+offset_right = 966.0
+offset_bottom = 555.0
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/Panel" unique_id=1256931406]
+layout_mode = 0
+offset_right = 764.0
+offset_bottom = 451.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/Panel/MarginContainer" unique_id=449184927]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="CanvasLayer/Panel/MarginContainer/VBoxContainer" unique_id=1055588407]
+custom_minimum_size = Vector2(0, 85)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_cn1i6")
+theme_override_font_sizes/font_size = 58
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/Panel/MarginContainer/VBoxContainer" unique_id=894543470]
+layout_mode = 2
+theme_override_fonts/normal_font = ExtResource("1_cn1i6")
+theme_override_font_sizes/normal_font_size = 30
+fit_content = true
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Control" type="Control" parent="CanvasLayer/Panel/MarginContainer/VBoxContainer" unique_id=1758553027]
+custom_minimum_size = Vector2(0, 60)
+layout_mode = 2
+
+[node name="CenterContainer" type="CenterContainer" parent="CanvasLayer/Panel/MarginContainer/VBoxContainer" unique_id=990165471]
+layout_mode = 2
+
+[node name="GridContainer" type="GridContainer" parent="CanvasLayer/Panel/MarginContainer/VBoxContainer/CenterContainer" unique_id=609306762]
+custom_minimum_size = Vector2(500, 0)
+layout_mode = 2
+theme_override_constants/h_separation = 25
+theme_override_constants/v_separation = 25
+columns = 2
+
+[node name="Button" type="Button" parent="CanvasLayer/Panel/MarginContainer/VBoxContainer/CenterContainer/GridContainer" unique_id=1018862207]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_fonts/font = ExtResource("1_cn1i6")
+theme_override_font_sizes/font_size = 36
+text = "P v Q"
+icon_alignment = 1
+vertical_icon_alignment = 2
+
+[node name="Button2" type="Button" parent="CanvasLayer/Panel/MarginContainer/VBoxContainer/CenterContainer/GridContainer" unique_id=1128972326]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_fonts/font = ExtResource("1_cn1i6")
+theme_override_font_sizes/font_size = 36
+text = "P ~ Q"
+vertical_icon_alignment = 2
+
+[node name="Button3" type="Button" parent="CanvasLayer/Panel/MarginContainer/VBoxContainer/CenterContainer/GridContainer" unique_id=1041632944]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_fonts/font = ExtResource("1_cn1i6")
+theme_override_font_sizes/font_size = 36
+text = "P ^ Q"
+vertical_icon_alignment = 2
+
+[node name="Button4" type="Button" parent="CanvasLayer/Panel/MarginContainer/VBoxContainer/CenterContainer/GridContainer" unique_id=545129028]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_fonts/font = ExtResource("1_cn1i6")
+theme_override_font_sizes/font_size = 36
+text = "P -> Q"
+vertical_icon_alignment = 2
+
+[node name="Control" type="Control" parent="CanvasLayer" unique_id=1340485605]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="FlorVermelha" type="TextureRect" parent="CanvasLayer/Control" unique_id=1194128143]
+layout_mode = 0
+offset_left = 1.0
+offset_top = 555.0
+offset_right = 94.0
+offset_bottom = 648.0
+texture = ExtResource("3_a3ewr")
+
+[node name="FlorVerde" type="TextureRect" parent="CanvasLayer/Control" unique_id=523354472]
+layout_mode = 0
+offset_left = 94.0
+offset_top = 555.0
+offset_right = 187.0
+offset_bottom = 648.0
+texture = ExtResource("4_o3apd")
+
+[node name="FlorAzul" type="TextureRect" parent="CanvasLayer/Control" unique_id=110792512]
+layout_mode = 0
+offset_left = 187.0
+offset_top = 555.0
+offset_right = 280.0
+offset_bottom = 648.0
+texture = ExtResource("5_0fu26")

@@ -6,6 +6,7 @@ var target_x
 var ground_y
 var target_door = null
 var door_clicked = false
+var can_move = true
 
 func _ready():
 	if Global.target_door_name != "":
@@ -28,7 +29,9 @@ func _ready():
 	$AnimatedSprite2D.play("idle")
 
 func _physics_process(delta):
-
+	if !can_move:
+		return
+	
 	if Input.is_action_just_pressed("click"):
 		if not door_clicked:
 			print("nao clicou na porta")
