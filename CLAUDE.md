@@ -4,7 +4,16 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Projeto
 
-Jogo point-click 2D em Godot 4.6 para alunos do 5º ano da BNCC de computação (EF15CO03). Um personagem em um mundo preto e branco resolve enigmas de lógica computacional para colorir o mundo. Cada cenário tem portas (R, G, B) que levam a desafios lógicos — ao completar o desafio, o jogador recebe um bloco de cor. Esse bloco deve ser inserido no **totem** do cenário para avançar.
+Jogo point-click 2D em Godot 4.6 para alunos do 5º ano da BNCC de computação (EF15CO03). Um personagem em um mundo preto e branco resolve enigmas de lógica computacional para colorir o mundo.
+
+### Mecânica atual
+
+Cada cenário principal tem **portas coloridas** (vermelha, verde, azul) que levam a cavernas. Dentro de cada caverna existe um **totem** com o desafio lógico embutido:
+
+- Ao entrar na caverna, o jogador pode receber uma **mensagem de dica** explicando como resolver o desafio presente naquele totem.
+- O totem exibe um enigma de lógica computacional (múltipla escolha, carregado de `enigmas.json`).
+- Ao acertar o enigma, o jogador recebe uma **flor** da cor da caverna (vermelha, verde ou azul) — ela **não fica no inventário**, é registrada em `Global` e aparece diretamente no **totem final** da cena principal.
+- O totem final só é completado quando todas as flores necessárias forem coletadas.
 
 Os arquivos do jogo ficam em: `snap/godot-4/common/fuegos-de-octubre/`
 
@@ -44,12 +53,22 @@ Fluxo ao clicar em uma porta:
 
 Para adicionar uma nova sala: instancie `Door.tscn`, configure `next_scene` e `target_door_name`, adicione `FadeLayer.tscn`, e instancie o player com o script `player.gd`.
 
+### Sistema de enigmas e flores
+
+- Os enigmas ficam em `enigmas.json` (frases de lógica proposicional + resposta correta).
+- `riddle_box.tscn` / `riddle_box.gd` é o componente do totem de desafio: carrega um enigma aleatório, exibe 4 botões de resposta e, ao acertar, chama `mostrar_recompensa()`.
+- `mostrar_recompensa()` seta o flag da flor em `Global` (ex: `Global.flor_azul = true`) e exibe o sprite da flor no `CanvasLayer/Control` do próprio `riddle_box`.
+- As flores **não ficam em inventário** — o estado persiste via `Global` e o totem final lê esses flags para exibir as flores recebidas.
+- `area_enigma.gd` é o `Area2D` que detecta o clique no totem e chama `riddle_box.abrir()` com a cor correspondente.
+
 ### Estado global (`Global.gd`)
 
-Autoload único (`Global="*res://scripts/Global.gd"`). Atualmente persiste:
+Autoload único (`Global="*res://scripts/Global.gd"`). Persiste:
 - `target_door_name: String` — porta de destino para posicionamento do player ao trocar de cena
+- `flor_azul: bool`, `flor_verde: bool`, `flor_vermelha: bool` — flags das flores coletadas em cada caverna
+- `color_channels: Dictionary` — canais R/G/B para colorização do mundo
 
-Adicione aqui qualquer estado que precise atravessar trocas de cena (ex: blocos coletados, cor do mundo em cada sala).
+Adicione aqui qualquer estado que precise atravessar trocas de cena.
 
 ### Player
 
@@ -61,7 +80,9 @@ Adicione aqui qualquer estado que precise atravessar trocas de cena (ex: blocos 
 
 ## Regras de código
 
-- Seguir orientação a objetos com reutilização via cenas prefab (como `Door.tscn`) — evitar duplicar lógica entre salas.
-- Novos tipos de desafio/puzzle devem ser cenas independentes que podem ser abertas por qualquer porta, recebendo a cor via `Global`.
-- Novos estados de jogo (blocos coletados, progresso de cor) devem morar em `Global.gd`.
+- Seguir orientação a objetos com reutilização via cenas prefab (como `Door.tscn`, `riddle_box.tscn`) — evitar duplicar lógica entre salas.
+- O `riddle_box.tscn` é o componente reutilizável de desafio; cada caverna instancia um e configura a cor da recompensa.
+- Mensagens de dica ao entrar na caverna devem usar o sistema de diálogo (`dialog.gd`) antes de liberar interação com o totem.
+- Flores não têm representação em inventário — o estado vai para `Global` e o totem final lê de lá.
+- Novos estados de jogo devem morar em `Global.gd`.
 - Textos e diálogos em português (pt-BR).

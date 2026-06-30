@@ -122,7 +122,7 @@ flip_h = true
 [node name="Area2D" type="Area2D" parent="Caverna/TunelPerspectiva" unique_id=1957773738]
 script = ExtResource("3_y8tq0")
 next_scene = "res://cenas_principais/main.tscn"
-target_door_name = "LeftDoor"
+target_door_name = "RightDoor"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Caverna/TunelPerspectiva/Area2D" unique_id=1795810679]
 position = Vector2(2.8965564, -0.094825745)
@@ -148,6 +148,7 @@ shape = SubResource("RectangleShape2D_jr0gc")
 position = Vector2(56, 154)
 script = ExtResource("8_y8tq0")
 riddle_box = NodePath("../RiddleBox")
+cor = "vermelha"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AreaEnigma" unique_id=1852638215]
 position = Vector2(601, 443.75)
