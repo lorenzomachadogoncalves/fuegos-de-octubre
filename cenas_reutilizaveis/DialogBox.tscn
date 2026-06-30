@@ -1,23 +1,23 @@
 [gd_scene format=3 uid="uid://b7h4nms2p6dlx"]
 
-[ext_resource type="Script" uid="uid://cmqf8r3x9vk2w" path="res://scripts/dialog_box.gd" id="1_script"]
+[ext_resource type="Script" uid="uid://cmqf8r3yavk2w" path="res://scripts/dialog_box.gd" id="1_script"]
 [ext_resource type="FontFile" uid="uid://c3278aec3xphj" path="res://PixelOperatorMono.ttf" id="2_font"]
 
-[node name="DialogBox" type="Node2D"]
+[node name="DialogBox" type="Node2D" unique_id=1019026420]
 script = ExtResource("1_script")
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=622638514]
 layer = 10
 
-[node name="Blocker" type="Control" parent="CanvasLayer"]
+[node name="Blocker" type="Control" parent="CanvasLayer" unique_id=893088963]
+layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-mouse_filter = 0
 
-[node name="Panel" type="Panel" parent="CanvasLayer"]
+[node name="Panel" type="Panel" parent="CanvasLayer" unique_id=1380427483]
 anchors_preset = 12
 anchor_top = 1.0
 anchor_right = 1.0
@@ -29,7 +29,7 @@ offset_bottom = -20.0
 grow_horizontal = 2
 grow_vertical = 0
 
-[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/Panel"]
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/Panel" unique_id=320643796]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -41,28 +41,28 @@ theme_override_constants/margin_top = 10
 theme_override_constants/margin_right = 16
 theme_override_constants/margin_bottom = 10
 
-[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/Panel/MarginContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/Panel/MarginContainer" unique_id=800346715]
 layout_mode = 2
 
-[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/Panel/MarginContainer/VBoxContainer"]
+[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/Panel/MarginContainer/VBoxContainer" unique_id=1443409723]
 layout_mode = 2
+size_flags_vertical = 3
 theme_override_fonts/normal_font = ExtResource("2_font")
 theme_override_font_sizes/normal_font_size = 28
 bbcode_enabled = true
 fit_content = true
-size_flags_vertical = 3
 
-[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/Panel/MarginContainer/VBoxContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/Panel/MarginContainer/VBoxContainer" unique_id=617926629]
 layout_mode = 2
 
-[node name="Spacer" type="Control" parent="CanvasLayer/Panel/MarginContainer/VBoxContainer/HBoxContainer"]
+[node name="Spacer" type="Control" parent="CanvasLayer/Panel/MarginContainer/VBoxContainer/HBoxContainer" unique_id=464616094]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="BtnProximo" type="Button" parent="CanvasLayer/Panel/MarginContainer/VBoxContainer/HBoxContainer"]
+[node name="BtnProximo" type="Button" parent="CanvasLayer/Panel/MarginContainer/VBoxContainer/HBoxContainer" unique_id=226694539]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_font")
 theme_override_font_sizes/font_size = 24
 text = "Próximo"
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="CanvasLayer"]
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="CanvasLayer" unique_id=883793439]
