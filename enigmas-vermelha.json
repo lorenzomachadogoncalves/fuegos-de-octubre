@@ -1,0 +1,26 @@
+[
+  {
+    "frase": "P: 'O céu é azul.' (verdadeiro)\nQ: 'A grama é verde.' (verdadeiro)\nQual expressão mostra que as DUAS são verdadeiras?",
+    "correta": "P ∧ Q"
+  },
+  {
+    "frase": "P: 'O sol ilumina.' (verdadeiro)\nQ: 'A chuva molha.' (verdadeiro)\nQual expressão mostra que as DUAS são verdadeiras?",
+    "correta": "P ∧ Q"
+  },
+  {
+    "frase": "P: 'Pássaros têm asas.' (verdadeiro)\nQ: 'Peixes têm guelras.' (verdadeiro)\nQual expressão mostra que as DUAS são verdadeiras?",
+    "correta": "P ∧ Q"
+  },
+  {
+    "frase": "P: 'Leite é branco.' (verdadeiro)\nQ: 'Carvão é preto.' (verdadeiro)\nQual expressão mostra que as DUAS são verdadeiras?",
+    "correta": "P ∧ Q"
+  },
+  {
+    "frase": "P: 'Triângulos têm três lados.' (verdadeiro)\nQ: 'Quadrados têm quatro lados.' (verdadeiro)\nQual expressão mostra que as DUAS são verdadeiras?",
+    "correta": "P ∧ Q"
+  },
+  {
+    "frase": "P: 'Fogo é quente.' (verdadeiro)\nQ: 'Gelo é frio.' (verdadeiro)\nQual expressão mostra que as DUAS são verdadeiras?",
+    "correta": "P ∧ Q"
+  }
+]

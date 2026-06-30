@@ -1,0 +1,26 @@
+[
+  {
+    "frase": "P: 'O sol é azul.' (falso)\nTransforme P em verdadeiro. Qual expressão resolve isso?",
+    "correta": "¬P"
+  },
+  {
+    "frase": "P: 'Gatos têm cinco patas.' (falso)\nQual expressão é verdadeira?",
+    "correta": "¬P"
+  },
+  {
+    "frase": "P: 'Peixes vivem nas árvores.' (falso)\nQual expressão transforma P em verdadeiro?",
+    "correta": "¬P"
+  },
+  {
+    "frase": "P: 'A lua é feita de queijo.' (falso)\nQual expressão é verdadeira?",
+    "correta": "¬P"
+  },
+  {
+    "frase": "P: 'Cachorros voam.' (falso)\nTransforme P em verdadeiro. Qual expressão resolve isso?",
+    "correta": "¬P"
+  },
+  {
+    "frase": "P: 'O fogo é frio.' (falso)\nQual expressão é verdadeira?",
+    "correta": "¬P"
+  }
+]

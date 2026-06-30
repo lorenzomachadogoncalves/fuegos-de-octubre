@@ -8,7 +8,9 @@ func _ready() -> void:
 		$DialogBox.mostrar([
 			"[center]Você finalmente acordou.[/center]",
 			"[center]Há muito tempo estou observando você.[/center]",
-			"[center]Siga e encontrará as respostas.[/center]"
+			"[center]Nesse mundo sem cor e sem lógica,[/center]",
+			"[center]você é o único que se lembra de como as coisas costumavam ser[/center]",
+			"[center]Siga adiante e mais respostas você obterá.[/center]"
 		])
 
 func _intro_vista():

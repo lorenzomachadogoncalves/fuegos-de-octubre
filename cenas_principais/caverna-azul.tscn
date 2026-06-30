@@ -9,6 +9,8 @@
 [ext_resource type="PackedScene" uid="uid://dyxstgyjsb7g7" path="res://cenas_reutilizaveis/FadeLayer.tscn" id="7_fc8nh"]
 [ext_resource type="PackedScene" uid="uid://dvu71m4yg3anc" path="res://riddle_box.tscn" id="8_fowa1"]
 [ext_resource type="Script" uid="uid://ddi117w8drqqk" path="res://scripts/area_enigma.gd" id="8_r12dw"]
+[ext_resource type="Script" path="res://scripts/caverna.gd" id="10_cvrna"]
+[ext_resource type="PackedScene" uid="uid://b7h4nms2p6dlx" path="res://cenas_reutilizaveis/DialogBox.tscn" id="11_dlgbox"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bl2qc"]
 size = Vector2(300.90143, 1.2820053)
@@ -99,6 +101,9 @@ size = Vector2(11.5, 47)
 size = Vector2(54, 99.5)
 
 [node name="Node2D" type="Node2D" unique_id=424882871]
+script = ExtResource("10_cvrna")
+chave_dialogo = "caverna_azul"
+linhas_dialogo = PackedStringArray("[center]Caverna da Negação[/center]", "[center]A negação inverte o valor de uma afirmação.[/center]", "[center]Se P é FALSO, então ¬P é VERDADEIRO![/center]", "[center]Exemplo: P = 'O sol é azul' (falso). Então ¬P = 'O sol não é azul' (verdadeiro!).[/center]", "[center]Resolva os enigmas: transforme a afirmação em VERDADEIRA![/center]")
 
 [node name="Caverna" type="Sprite2D" parent="." unique_id=1161469274]
 position = Vector2(576.1029, 323.99997)
@@ -153,5 +158,8 @@ riddle_box = NodePath("../RiddleBox")
 position = Vector2(601, 443.75)
 shape = SubResource("RectangleShape2D_bm6uj")
 
+[node name="DialogBox" parent="." instance=ExtResource("11_dlgbox")]
+
 [node name="RiddleBox" parent="." unique_id=1739927017 instance=ExtResource("8_fowa1")]
 visible = false
+caminho_enigmas = "res://enigmas-azul.json"
