@@ -5,7 +5,9 @@ extends CharacterBody2D
 var target_x
 var ground_y
 var target_door = null
+var target_totem = null
 var door_clicked = false
+var totem_clicked = false
 var can_move = true
 
 func _ready():
@@ -31,18 +33,21 @@ func _ready():
 func _physics_process(delta):
 	if !can_move:
 		return
-	
+
 	if Input.is_action_just_pressed("click"):
-		if not door_clicked:
-			print("nao clicou na porta")
+		if not door_clicked and not totem_clicked:
 			target_door = null
+			target_totem = null
 			target_x = get_global_mouse_position().x
+
 	var direction = target_x - global_position.x
 	if abs(direction) > 5:
 		walk(direction)
 	else:
 		arrived_at_destination()
+
 	door_clicked = false
+	totem_clicked = false
 
 func arrived_at_destination():
 	velocity = Vector2.ZERO
@@ -51,6 +56,9 @@ func arrived_at_destination():
 		$AnimatedSprite2D.play("idle")
 	if target_door:
 		vai_para_a_cena_da_porta()
+	elif target_totem:
+		target_totem.abrir_desafio()
+		target_totem = null
 
 func walk(direction):
 	velocity.x = sign(direction) * speed
@@ -74,6 +82,12 @@ func vai_para_a_cena_da_porta():
 
 func move_to_door(door, x):
 	door_clicked = true
-	print("indo para a porta")
 	target_x = x
 	target_door = door
+	target_totem = null
+
+func move_to_totem(totem, x):
+	totem_clicked = true
+	target_x = x
+	target_totem = totem
+	target_door = null

@@ -43,7 +43,7 @@ func carregar_enigmas():
 	if erro != OK:
 		print("Erro ao interpretar JSON")
 		return []
-	
+
 	print("json carregado")
 	return json.data
 
@@ -61,15 +61,17 @@ func fechar():
 	$CanvasLayer/Panel.hide()
 	var player = get_tree().get_first_node_in_group("player")
 	player.can_move = true
-	
+
 func mostrar_recompensa():
 	match recompensa:
 		"azul":
 			Global.flor_azul = true
 			$CanvasLayer/Control/FlorAzul.show()
-		
 		"verde":
+			Global.flor_verde = true
 			$CanvasLayer/Control/FlorVerde.show()
-
 		"vermelha":
+			Global.flor_vermelha = true
 			$CanvasLayer/Control/FlorVermelha.show()
+	await get_tree().create_timer(1.5).timeout
+	$CanvasLayer.hide()

@@ -15,18 +15,22 @@ var flor_vermelha = false
 var dialogos_vistos: Dictionary = {}
 
 var _musica: AudioStreamPlayer
+var _stream_atual: AudioStream = null
 
 func _ready():
 	_musica = AudioStreamPlayer.new()
 	add_child(_musica)
+	_musica.finished.connect(func(): _musica.play())
 
 func tocar_musica(stream: AudioStream):
-	if _musica.stream == stream and _musica.playing:
+	if _stream_atual == stream and _musica.playing:
 		return
+	_stream_atual = stream
 	_musica.stream = stream
 	_musica.play()
 
 func parar_musica():
+	_stream_atual = null
 	_musica.stop()
 
 func set_volume(db: float):
