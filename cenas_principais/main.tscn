@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://botslb7s7ulcf" path="res://assets/backgrounds/Layer02.png" id="5_ycdy4"]
 [ext_resource type="Texture2D" uid="uid://cvx66nh4m0mdl" path="res://assets/backgrounds/Layer03.png" id="6_w48qg"]
 [ext_resource type="Texture2D" uid="uid://umkww4jj5rg6" path="res://assets/characters/1-Navigation/Walk Sprite-Sheet.png" id="10_4c57u"]
+[ext_resource type="Texture2D" uid="uid://cg4upph0rvaew" path="res://assets/backgrounds/blue_door.png" id="10_w2cfx"]
 [ext_resource type="PackedScene" uid="uid://b7h4nms2p6dlx" path="res://cenas_reutilizaveis/DialogBox.tscn" id="11_dlgbox"]
 [ext_resource type="Texture2D" uid="uid://d3qaeq408xjil" path="res://assets/backgrounds/tunel-perspectiva.jpeg" id="12_ycdy4"]
 [ext_resource type="PackedScene" uid="uid://dyxstgyjsb7g7" path="res://cenas_reutilizaveis/FadeLayer.tscn" id="13_ycdy4"]
@@ -200,14 +201,16 @@ target_door_name = "TunelPerspectiva"
 position = Vector2(-496, 0)
 
 [node name="SpriteDoor" parent="LeftDoor" index="0" unique_id=625106910]
-texture = ExtResource("12_ycdy4")
+position = Vector2(560, 586)
+scale = Vector2(0.9400001, 0.84)
+texture = ExtResource("10_w2cfx")
 
 [node name="Area2D" parent="LeftDoor" index="1" unique_id=2018634998]
 next_scene = "res://cenas_principais/caverna-azul.tscn"
 target_door_name = "Tunel Perspectiva"
 
 [node name="CollisionShape2D" parent="LeftDoor/Area2D" index="0" unique_id=2139364499]
-position = Vector2(554.5, 571)
+position = Vector2(559.5156, 576.75)
 
 [node name="RightDoor" parent="." unique_id=253665186 instance=ExtResource("14_w48qg")]
 position = Vector2(130, 0)
@@ -225,6 +228,7 @@ target_door_name = "TunelPerspectiva"
 position = Vector2(957, 579)
 
 [node name="ColorFilter" parent="." unique_id=112233445 instance=ExtResource("18_cf")]
+visible = false
 
 [node name="FadeLayer" parent="." unique_id=985700339 instance=ExtResource("13_ycdy4")]
 position = Vector2(82, 24)
@@ -262,7 +266,7 @@ scale = Vector2(3.2708426, 3.3020856)
 texture = ExtResource("18_w2cfx")
 
 [node name="DialogBox" parent="." unique_id=1507620247 instance=ExtResource("11_dlgbox")]
-position = Vector2(1, -1)
+position = Vector2(-4, 10)
 som_proximo = ExtResource("20_08wae")
 
 [editable path="CenterDoor"]

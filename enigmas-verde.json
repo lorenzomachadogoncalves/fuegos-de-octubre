@@ -1,0 +1,26 @@
+[
+  {
+    "frase": "P: 'Gatos voam.' (falso)\nQ: 'Peixes nadam.' (verdadeiro)\nQual expressão é verdadeira?",
+    "correta": "P ∨ Q"
+  },
+  {
+    "frase": "P: 'Elefantes são pequenos.' (falso)\nQ: 'O céu é azul.' (verdadeiro)\nQual expressão é verdadeira?",
+    "correta": "P ∨ Q"
+  },
+  {
+    "frase": "P: 'A neve é quente.' (falso)\nQ: 'O fogo é quente.' (verdadeiro)\nQual expressão é verdadeira?",
+    "correta": "P ∨ Q"
+  },
+  {
+    "frase": "P: 'Chuva é seca.' (falso)\nQ: 'Água é líquida.' (verdadeiro)\nQual expressão é verdadeira?",
+    "correta": "P ∨ Q"
+  },
+  {
+    "frase": "P: 'Borboletas são mamíferos.' (falso)\nQ: 'Abelhas são insetos.' (verdadeiro)\nQual expressão é verdadeira?",
+    "correta": "P ∨ Q"
+  },
+  {
+    "frase": "P: 'Pedras são macias.' (falso)\nQ: 'Flores são plantas.' (verdadeiro)\nQual expressão é verdadeira?",
+    "correta": "P ∨ Q"
+  }
+]

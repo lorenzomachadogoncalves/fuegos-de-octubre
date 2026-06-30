@@ -1,5 +1,6 @@
 extends Node2D
 
+@export var caminho_enigmas: String = "res://enigmas.json"
 var recompensa = ""
 var enigmas = []
 var resposta = ""
@@ -37,7 +38,7 @@ func _on_resposta_pressed(botao: Button):
 		gerar_enigma()
 
 func carregar_enigmas():
-	var file = FileAccess.open("res://enigmas.json", FileAccess.READ)
+	var file = FileAccess.open(caminho_enigmas, FileAccess.READ)
 	if file == null:
 		print("Erro ao abrir JSON")
 		return []
