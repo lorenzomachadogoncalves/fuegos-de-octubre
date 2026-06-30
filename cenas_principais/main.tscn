@@ -11,14 +11,14 @@
 [ext_resource type="Texture2D" uid="uid://b4nl12b3r41wp" path="res://assets/backgrounds/Layer4B.png" id="8_2cqfq"]
 [ext_resource type="Texture2D" uid="uid://cuts1pigsv8rf" path="res://assets/backgrounds/Layer04C.png" id="9_yaehf"]
 [ext_resource type="Texture2D" uid="uid://umkww4jj5rg6" path="res://assets/characters/1-Navigation/Walk Sprite-Sheet.png" id="10_4c57u"]
-[ext_resource type="Script" uid="uid://cp0n11nd0ixvp" path="res://dialog.gd" id="11_6vle7"]
-[ext_resource type="FontFile" uid="uid://c3278aec3xphj" path="res://PixelOperatorMono.ttf" id="12_bdgad"]
+[ext_resource type="PackedScene" uid="uid://b7h4nms2p6dlx" path="res://cenas_reutilizaveis/DialogBox.tscn" id="11_dlgbox"]
 [ext_resource type="Texture2D" uid="uid://d3qaeq408xjil" path="res://assets/backgrounds/tunel-perspectiva.jpeg" id="12_ycdy4"]
 [ext_resource type="PackedScene" uid="uid://dyxstgyjsb7g7" path="res://cenas_reutilizaveis/FadeLayer.tscn" id="13_ycdy4"]
 [ext_resource type="PackedScene" uid="uid://dstgffvb828kd" path="res://cenas_reutilizaveis/Door.tscn" id="14_w48qg"]
 [ext_resource type="Texture2D" uid="uid://4gyu2ipq6q04" path="res://assets/backgrounds/initial-totem.png" id="17_bnx2b"]
 [ext_resource type="PackedScene" uid="uid://h5n8uphklens" path="res://cenas_reutilizaveis/ColorFilter.tscn" id="18_cf"]
 [ext_resource type="PackedScene" uid="uid://d0ousav81v1m7" path="res://cenas_reutilizaveis/Cloud.tscn" id="19_cloud"]
+[ext_resource type="AudioStream" uid="uid://cxvghsj041r0j" path="res://assets/sounds/page_turn.wav" id="20_08wae"]
 [ext_resource type="PackedScene" uid="uid://dvu71m4yg3anc" path="res://riddle_box.tscn" id="20_w2cfx"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_074og"]
@@ -63,7 +63,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_074og")
 }],
-"loop": 1,
+"loop": true,
 "name": &"idle",
 "speed": 5.0
 }, {
@@ -92,7 +92,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_cegan")
 }],
-"loop": 1,
+"loop": true,
 "name": &"walk",
 "speed": 10.0
 }]
@@ -199,24 +199,6 @@ animation = &"walk"
 position = Vector2(0.75, 1.5)
 shape = SubResource("RectangleShape2D_4c57u")
 
-[node name="CanvasLayer" type="CanvasLayer" parent="Player" unique_id=1201911135]
-script = ExtResource("11_6vle7")
-
-[node name="Panel" type="Panel" parent="Player/CanvasLayer" unique_id=1638547406]
-offset_right = 1153.0
-offset_bottom = 111.0
-
-[node name="RichTextLabel" type="RichTextLabel" parent="Player/CanvasLayer/Panel" unique_id=1825218670]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_fonts/normal_font = ExtResource("12_bdgad")
-theme_override_font_sizes/normal_font_size = 44
-bbcode_enabled = true
-
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1154164830]
 
 [node name="Parede direita" type="CollisionShape2D" parent="StaticBody2D" unique_id=88232166]
@@ -282,6 +264,9 @@ shape = SubResource("RectangleShape2D_i30la")
 
 [node name="RiddleBox" parent="." unique_id=1739927017 instance=ExtResource("20_w2cfx")]
 visible = false
+
+[node name="DialogBox" parent="." unique_id=1507620247 instance=ExtResource("11_dlgbox")]
+som_proximo = ExtResource("20_08wae")
 
 [editable path="LeftDoor"]
 [editable path="RightDoor"]
