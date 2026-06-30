@@ -1,6 +1,6 @@
 extends Node2D
 
-var item_atual = ""
+var recompensa = ""
 var enigmas = []
 var resposta = ""
 @onready var texto = $CanvasLayer/Panel/MarginContainer/VBoxContainer/RichTextLabel
@@ -8,19 +8,25 @@ var resposta = ""
 @onready var btn2 = $CanvasLayer/Panel/MarginContainer/VBoxContainer/CenterContainer/GridContainer/Button2
 @onready var btn3 = $CanvasLayer/Panel/MarginContainer/VBoxContainer/CenterContainer/GridContainer/Button3
 @onready var btn4 = $CanvasLayer/Panel/MarginContainer/VBoxContainer/CenterContainer/GridContainer/Button4
-# Called when the node enters the scene tree for the first time.
+
 func _ready():
-	$CanvasLayer/Panel/MarginContainer/VBoxContainer/CenterContainer/GridContainer/Button.pressed.connect(func(): _on_resposta_pressed($Button))
-	$CanvasLayer/Panel/MarginContainer/VBoxContainer/CenterContainer/GridContainer/Button2.pressed.connect(func(): _on_resposta_pressed($Button2))
-	$CanvasLayer/Panel/MarginContainer/VBoxContainer/CenterContainer/GridContainer/Button3.pressed.connect(func(): _on_resposta_pressed($Button3))
-	$CanvasLayer/Panel/MarginContainer/VBoxContainer/CenterContainer/GridContainer/Button4.pressed.connect(func(): _on_resposta_pressed($Button4))
+	btn1.pressed.connect(func(): _on_resposta_pressed(btn1))
+	btn2.pressed.connect(func(): _on_resposta_pressed(btn2))
+	btn3.pressed.connect(func(): _on_resposta_pressed(btn3))
+	btn4.pressed.connect(func(): _on_resposta_pressed(btn4))
 	$CanvasLayer.hide()
 	enigmas = carregar_enigmas()
 	gerar_enigmas()
+	print("Essa é a resposta " + resposta)
+	$CanvasLayer/Control/FlorAzul.visible = Global.flor_azul
+	$CanvasLayer/Control/FlorVerde.visible = Global.flor_verde
+	$CanvasLayer/Control/FlorVermelha.visible = Global.flor_vermelha
 
 func _on_resposta_pressed(botao: Button):
 	if botao.text == resposta:
+		print("respondeu")
 		fechar()
+		mostrar_recompensa()
 
 func carregar_enigmas():
 	var file = FileAccess.open("res://enigmas.json", FileAccess.READ)
@@ -48,13 +54,22 @@ func gerar_enigmas():
 
 func abrir():
 	$CanvasLayer.show()
-	
 	var player = get_tree().get_first_node_in_group("player")
 	player.can_move = false
 
 func fechar():
-	$CanvasLayer.hide()
-
+	$CanvasLayer/Panel.hide()
 	var player = get_tree().get_first_node_in_group("player")
 	player.can_move = true
 	
+func mostrar_recompensa():
+	match recompensa:
+		"azul":
+			Global.flor_azul = true
+			$CanvasLayer/Control/FlorAzul.show()
+		
+		"verde":
+			$CanvasLayer/Control/FlorVerde.show()
+
+		"vermelha":
+			$CanvasLayer/Control/FlorVermelha.show()

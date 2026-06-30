@@ -7,6 +7,8 @@
 [ext_resource type="Texture2D" uid="uid://gxf05ei02atu" path="res://assets/characters/1-Navigation/3-4 Idle-Sheet.png" id="5_peeek"]
 [ext_resource type="Texture2D" uid="uid://umkww4jj5rg6" path="res://assets/characters/1-Navigation/Walk Sprite-Sheet.png" id="6_wlll7"]
 [ext_resource type="PackedScene" uid="uid://dyxstgyjsb7g7" path="res://cenas_reutilizaveis/FadeLayer.tscn" id="7_5ct1a"]
+[ext_resource type="Script" uid="uid://ddi117w8drqqk" path="res://scripts/area_enigma.gd" id="8_6g578"]
+[ext_resource type="PackedScene" uid="uid://dvu71m4yg3anc" path="res://riddle_box.tscn" id="9_spwgx"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bl2qc"]
 size = Vector2(300.90143, 1.2820053)
@@ -56,7 +58,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_074og")
 }],
-"loop": true,
+"loop": 1,
 "name": &"idle",
 "speed": 5.0
 }, {
@@ -85,13 +87,16 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_cegan")
 }],
-"loop": true,
+"loop": 1,
 "name": &"walk",
 "speed": 10.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jr0gc"]
 size = Vector2(11.5, 47)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_peeek"]
+size = Vector2(54, 99.5)
 
 [node name="Node2D" type="Node2D" unique_id=424882871]
 
@@ -138,3 +143,15 @@ position = Vector2(0.75, 1.5)
 shape = SubResource("RectangleShape2D_jr0gc")
 
 [node name="FadeLayer" parent="." unique_id=985700339 instance=ExtResource("7_5ct1a")]
+
+[node name="AreaEnigma" type="Area2D" parent="." unique_id=1540539992 node_paths=PackedStringArray("riddle_box")]
+position = Vector2(56, 154)
+script = ExtResource("8_6g578")
+riddle_box = NodePath("../RiddleBox")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AreaEnigma" unique_id=138116618]
+position = Vector2(601, 443.75)
+shape = SubResource("RectangleShape2D_peeek")
+
+[node name="RiddleBox" parent="." unique_id=1739927017 instance=ExtResource("9_spwgx")]
+visible = false

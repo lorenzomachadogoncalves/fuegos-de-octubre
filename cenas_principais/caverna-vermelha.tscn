@@ -5,6 +5,8 @@
 [ext_resource type="Texture2D" uid="uid://gxf05ei02atu" path="res://assets/characters/1-Navigation/3-4 Idle-Sheet.png" id="1_kek77"]
 [ext_resource type="Texture2D" uid="uid://d3qaeq408xjil" path="res://assets/backgrounds/tunel-perspectiva.jpeg" id="2_poe85"]
 [ext_resource type="Script" uid="uid://t1x4nvvnbqmb" path="res://scripts/doorCenter/area_2d.gd" id="3_y8tq0"]
+[ext_resource type="Script" uid="uid://ddi117w8drqqk" path="res://scripts/area_enigma.gd" id="8_y8tq0"]
+[ext_resource type="PackedScene" uid="uid://dvu71m4yg3anc" path="res://riddle_box.tscn" id="9_ub0oe"]
 [ext_resource type="Texture2D" uid="uid://umkww4jj5rg6" path="res://assets/characters/1-Navigation/Walk Sprite-Sheet.png" id="10_4c57u"]
 [ext_resource type="PackedScene" uid="uid://dyxstgyjsb7g7" path="res://cenas_reutilizaveis/FadeLayer.tscn" id="13_ycdy4"]
 
@@ -56,7 +58,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_074og")
 }],
-"loop": true,
+"loop": 1,
 "name": &"idle",
 "speed": 5.0
 }, {
@@ -85,13 +87,16 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_cegan")
 }],
-"loop": true,
+"loop": 1,
 "name": &"walk",
 "speed": 10.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jr0gc"]
 size = Vector2(11.5, 47)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_poe85"]
+size = Vector2(54, 99.5)
 
 [node name="Node2D" type="Node2D" unique_id=424882871]
 
@@ -138,3 +143,15 @@ position = Vector2(0.75, 1.5)
 shape = SubResource("RectangleShape2D_jr0gc")
 
 [node name="FadeLayer" parent="." unique_id=985700339 instance=ExtResource("13_ycdy4")]
+
+[node name="AreaEnigma" type="Area2D" parent="." unique_id=1324188481 node_paths=PackedStringArray("riddle_box")]
+position = Vector2(56, 154)
+script = ExtResource("8_y8tq0")
+riddle_box = NodePath("../RiddleBox")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AreaEnigma" unique_id=1852638215]
+position = Vector2(601, 443.75)
+shape = SubResource("RectangleShape2D_poe85")
+
+[node name="RiddleBox" parent="." unique_id=1739927017 instance=ExtResource("9_ub0oe")]
+visible = false

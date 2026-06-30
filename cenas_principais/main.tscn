@@ -16,9 +16,10 @@
 [ext_resource type="Texture2D" uid="uid://d3qaeq408xjil" path="res://assets/backgrounds/tunel-perspectiva.jpeg" id="12_ycdy4"]
 [ext_resource type="PackedScene" uid="uid://dyxstgyjsb7g7" path="res://cenas_reutilizaveis/FadeLayer.tscn" id="13_ycdy4"]
 [ext_resource type="PackedScene" uid="uid://dstgffvb828kd" path="res://cenas_reutilizaveis/Door.tscn" id="14_w48qg"]
-[ext_resource type="PackedScene" uid="uid://d0ousav81v1m7" path="res://cenas_reutilizaveis/Cloud.tscn" id="19_cloud"]
-[ext_resource type="PackedScene" uid="uid://h5n8uphklens" path="res://cenas_reutilizaveis/ColorFilter.tscn" id="18_cf"]
 [ext_resource type="Texture2D" uid="uid://4gyu2ipq6q04" path="res://assets/backgrounds/initial-totem.png" id="17_bnx2b"]
+[ext_resource type="PackedScene" uid="uid://h5n8uphklens" path="res://cenas_reutilizaveis/ColorFilter.tscn" id="18_cf"]
+[ext_resource type="PackedScene" uid="uid://d0ousav81v1m7" path="res://cenas_reutilizaveis/Cloud.tscn" id="19_cloud"]
+[ext_resource type="PackedScene" uid="uid://dvu71m4yg3anc" path="res://riddle_box.tscn" id="20_w2cfx"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_074og"]
 atlas = ExtResource("1_kek77")
@@ -62,7 +63,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_074og")
 }],
-"loop": true,
+"loop": 1,
 "name": &"idle",
 "speed": 5.0
 }, {
@@ -91,7 +92,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_cegan")
 }],
-"loop": true,
+"loop": 1,
 "name": &"walk",
 "speed": 10.0
 }]
@@ -278,6 +279,9 @@ texture = ExtResource("17_bnx2b")
 position = Vector2(-0.05819702, 7.697708)
 scale = Vector2(1.0000005, 1.0000005)
 shape = SubResource("RectangleShape2D_i30la")
+
+[node name="RiddleBox" parent="." unique_id=1739927017 instance=ExtResource("20_w2cfx")]
+visible = false
 
 [editable path="LeftDoor"]
 [editable path="RightDoor"]
