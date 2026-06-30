@@ -16,6 +16,10 @@
 [ext_resource type="PackedScene" uid="uid://d0ousav81v1m7" path="res://cenas_reutilizaveis/Cloud.tscn" id="19_cloud"]
 [ext_resource type="AudioStream" uid="uid://cxvghsj041r0j" path="res://assets/sounds/page_turn.wav" id="20_08wae"]
 [ext_resource type="PackedScene" uid="uid://dvu71m4yg3anc" path="res://riddle_box.tscn" id="20_w2cfx"]
+[ext_resource type="Script" uid="uid://ctotempr1ncp1" path="res://scripts/totem_principal.gd" id="22_totem"]
+[ext_resource type="Texture2D" uid="uid://dvhv32i6bqayt" path="res://assets/objects/red-flower.png" id="23_rflw"]
+[ext_resource type="Texture2D" uid="uid://67dajpnwgaqq" path="res://assets/objects/green-flower.png" id="24_gflw"]
+[ext_resource type="Texture2D" uid="uid://dghh6m8oofkx3" path="res://assets/objects/blue-flower.png" id="25_bflw"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_074og"]
 atlas = ExtResource("1_kek77")
@@ -228,6 +232,7 @@ scale = Vector2(3.0714285, 3.0714285)
 texture = ExtResource("17_bnx2b")
 
 [node name="Area2D" type="Area2D" parent="InitialTotem" unique_id=1564487095]
+script = ExtResource("22_totem")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InitialTotem/Area2D" unique_id=1722086223]
 position = Vector2(-0.05819702, 7.697708)
@@ -236,6 +241,21 @@ shape = SubResource("RectangleShape2D_i30la")
 
 [node name="RiddleBox" parent="." unique_id=1739927017 instance=ExtResource("20_w2cfx")]
 visible = false
+
+[node name="FlorVermelha" type="Sprite2D" parent="." unique_id=899100001]
+visible = false
+position = Vector2(815, 595)
+texture = ExtResource("23_rflw")
+
+[node name="FlorVerde" type="Sprite2D" parent="." unique_id=899100002]
+visible = false
+position = Vector2(839, 595)
+texture = ExtResource("24_gflw")
+
+[node name="FlorAzul" type="Sprite2D" parent="." unique_id=899100003]
+visible = false
+position = Vector2(863, 595)
+texture = ExtResource("25_bflw")
 
 [node name="DialogBox" parent="." unique_id=1507620247 instance=ExtResource("11_dlgbox")]
 som_proximo = ExtResource("20_08wae")
