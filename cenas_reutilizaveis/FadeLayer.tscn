@@ -40,11 +40,9 @@ _data = {
 }
 
 [node name="FadeLayer" type="Node2D" unique_id=985700339]
-visible = false
 script = ExtResource("1_51kwb")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1778015174]
-visible = false
 script = ExtResource("1_dv612")
 
 [node name="ColorRect" type="ColorRect" parent="CanvasLayer" unique_id=1854477469]

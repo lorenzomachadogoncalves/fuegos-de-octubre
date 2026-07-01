@@ -1,26 +1,52 @@
 [
   {
-    "frase": "P: 'O sol é azul.' (falso)\nTransforme P em verdadeiro. Qual expressão resolve isso?",
-    "correta": "¬P"
+    "frase": "Regra: P → Q\nP: 'Borboletas têm asas.' (verdadeiro)\nQ: 'Borboletas podem voar.' (verdadeiro)\nDado que P é verdadeiro, o que se conclui?",
+    "correta": "Q é verdadeiro",
+    "opcoes": ["Q é verdadeiro", "Q é falso", "P é falso", "P ∧ Q é falso"]
   },
   {
-    "frase": "P: 'Gatos têm cinco patas.' (falso)\nQual expressão é verdadeira?",
-    "correta": "¬P"
+    "frase": "Sabemos que A ∧ B é verdadeiro:\nA: 'Peixes nadam.'\nB: 'Pássaros voam.'\nO que podemos concluir?",
+    "correta": "A é verdadeiro",
+    "opcoes": ["A é verdadeiro", "A é falso", "¬B é verdadeiro", "A ∧ B é falso"]
   },
   {
-    "frase": "P: 'Peixes vivem nas árvores.' (falso)\nQual expressão transforma P em verdadeiro?",
-    "correta": "¬P"
+    "frase": "Regra: R → S\nR: 'Está chovendo.' (verdadeiro)\nS: 'A rua está molhada.' (verdadeiro)\nDado que R é verdadeiro, o que se conclui?",
+    "correta": "S é verdadeiro",
+    "opcoes": ["S é verdadeiro", "S é falso", "R é falso", "R → S é falso"]
   },
   {
-    "frase": "P: 'A lua é feita de queijo.' (falso)\nQual expressão é verdadeira?",
-    "correta": "¬P"
+    "frase": "Sabemos que P ∧ Q é verdadeiro:\nP: 'O gelo é frio.'\nQ: 'O fogo é quente.'\nO que podemos afirmar com certeza?",
+    "correta": "Q é verdadeiro",
+    "opcoes": ["Q é verdadeiro", "P é falso", "¬P é verdadeiro", "P ∧ Q é falso"]
   },
   {
-    "frase": "P: 'Cachorros voam.' (falso)\nTransforme P em verdadeiro. Qual expressão resolve isso?",
-    "correta": "¬P"
+    "frase": "Regra: A → B\nA: 'O pássaro tem asas.' (verdadeiro)\nB: 'O pássaro pode usá-las para voar.' (verdadeiro)\nDado que A é verdadeiro, o que se conclui?",
+    "correta": "B é verdadeiro",
+    "opcoes": ["B é verdadeiro", "A é falso", "B é falso", "¬A é verdadeiro"]
   },
   {
-    "frase": "P: 'O fogo é frio.' (falso)\nQual expressão é verdadeira?",
-    "correta": "¬P"
+    "frase": "Sabemos que R ∧ S é verdadeiro:\nR: 'Leões são mamíferos.'\nS: 'Galinhas botam ovos.'\nO que podemos concluir?",
+    "correta": "S é verdadeiro",
+    "opcoes": ["S é verdadeiro", "R é falso", "¬S é verdadeiro", "R ∧ S é falso"]
+  },
+  {
+    "frase": "Regra: P → Q\nP: 'O alarme tocou.' (verdadeiro)\nQ: 'Todos acordaram.' (verdadeiro)\nDado que P é verdadeiro, o que se conclui?",
+    "correta": "Q é verdadeiro",
+    "opcoes": ["Q é verdadeiro", "Q é falso", "P é falso", "P ∧ Q é falso"]
+  },
+  {
+    "frase": "Sabemos que A ∧ B é verdadeiro:\nA: 'A porta está trancada.'\nB: 'A chave está escondida.'\nO que podemos concluir?",
+    "correta": "B é verdadeiro",
+    "opcoes": ["B é verdadeiro", "B é falso", "¬A é verdadeiro", "A ∧ B é falso"]
+  },
+  {
+    "frase": "Regra: C → D\nC: 'A semente foi plantada.' (verdadeiro)\nD: 'A planta vai crescer.' (verdadeiro)\nDado que C é verdadeiro, o que se conclui?",
+    "correta": "D é verdadeiro",
+    "opcoes": ["D é verdadeiro", "D é falso", "C é falso", "C → D é falso"]
+  },
+  {
+    "frase": "Sabemos que P ∧ Q é verdadeiro:\nP: 'A vela está acesa.'\nQ: 'A sala está iluminada.'\nO que podemos afirmar com certeza?",
+    "correta": "P é verdadeiro",
+    "opcoes": ["P é verdadeiro", "Q é falso", "¬Q é verdadeiro", "P ∧ Q é falso"]
   }
 ]

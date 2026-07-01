@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://qt8d0l3v0wal"]
+
+[ext_resource type="Script" uid="uid://da7rxyu2s4dp5" path="res://scripts/flor_animada.gd" id="1"]
+
+[node name="FlorAnimada" type="Node2D" unique_id=816725052]
+script = ExtResource("1")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=409000568]
+scale = Vector2(1.5, 1.5)

@@ -1,22 +1,19 @@
 [gd_scene format=3 uid="uid://b3buebda1cdy8"]
 
 [ext_resource type="Script" uid="uid://kobogdbefd27" path="res://scripts/player.gd" id="1_4c57u"]
-[ext_resource type="Texture2D" uid="uid://cctu2nud72fiw" path="res://assets/backgrounds/cavern-red-stone.png" id="1_bo6x4"]
 [ext_resource type="Texture2D" uid="uid://gxf05ei02atu" path="res://assets/characters/1-Navigation/3-4 Idle-Sheet.png" id="1_kek77"]
-[ext_resource type="Texture2D" uid="uid://d3qaeq408xjil" path="res://assets/backgrounds/tunel-perspectiva.jpeg" id="2_poe85"]
-[ext_resource type="Script" uid="uid://t1x4nvvnbqmb" path="res://scripts/doorCenter/area_2d.gd" id="3_y8tq0"]
-[ext_resource type="Script" uid="uid://ddi117w8drqqk" path="res://scripts/area_enigma.gd" id="8_y8tq0"]
+[ext_resource type="Texture2D" uid="uid://bsbgpg8y4adig" path="res://assets/backgrounds/cavern.png" id="2_8jmf2"]
+[ext_resource type="AudioStream" uid="uid://cxvghsj041r0j" path="res://assets/sounds/page_turn.wav" id="9_8jmf2"]
 [ext_resource type="PackedScene" uid="uid://dvu71m4yg3anc" path="res://riddle_box.tscn" id="9_ub0oe"]
-[ext_resource type="Script" path="res://scripts/caverna.gd" id="10_cvrna"]
-[ext_resource type="PackedScene" uid="uid://b7h4nms2p6dlx" path="res://cenas_reutilizaveis/DialogBox.tscn" id="11_dlgbox"]
 [ext_resource type="Texture2D" uid="uid://umkww4jj5rg6" path="res://assets/characters/1-Navigation/Walk Sprite-Sheet.png" id="10_4c57u"]
+[ext_resource type="Script" uid="uid://w2lhqiwh6rtw" path="res://scripts/caverna.gd" id="10_cvrna"]
+[ext_resource type="PackedScene" uid="uid://dstgffvb828kd" path="res://cenas_reutilizaveis/Door.tscn" id="10_ub0oe"]
+[ext_resource type="PackedScene" uid="uid://dqoegv44xhhn4" path="res://cenas_reutilizaveis/totem.tscn" id="11_8jmf2"]
+[ext_resource type="PackedScene" uid="uid://b7h4nms2p6dlx" path="res://cenas_reutilizaveis/DialogBox.tscn" id="11_dlgbox"]
 [ext_resource type="PackedScene" uid="uid://dyxstgyjsb7g7" path="res://cenas_reutilizaveis/FadeLayer.tscn" id="13_ycdy4"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bl2qc"]
 size = Vector2(300.90143, 1.2820053)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_3sf0e"]
-size = Vector2(9.931036, 16.189651)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_074og"]
 atlas = ExtResource("1_kek77")
@@ -60,7 +57,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_074og")
 }],
-"loop": 1,
+"loop": true,
 "name": &"idle",
 "speed": 5.0
 }, {
@@ -89,7 +86,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_cegan")
 }],
-"loop": 1,
+"loop": true,
 "name": &"walk",
 "speed": 10.0
 }]
@@ -97,18 +94,14 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jr0gc"]
 size = Vector2(11.5, 47)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_poe85"]
-size = Vector2(54, 99.5)
-
 [node name="Node2D" type="Node2D" unique_id=424882871]
 script = ExtResource("10_cvrna")
 chave_dialogo = "caverna_vermelha"
-linhas_dialogo = PackedStringArray("[center]Caverna da Conjunção[/center]", "[center]A conjunção exige que DUAS afirmações sejam verdadeiras ao mesmo tempo (símbolo ∧).[/center]", "[center]P ∧ Q só é VERDADEIRO quando P é verdadeiro E Q também é verdadeiro.[/center]", "[center]Exemplo: P = 'O céu é azul' (verdadeiro). Q = 'A grama é verde' (verdadeiro). P ∧ Q é VERDADEIRO![/center]", "[center]Resolva os enigmas: qual expressão mostra que as DUAS são verdadeiras?[/center]")
 
 [node name="Caverna" type="Sprite2D" parent="." unique_id=1161469274]
 position = Vector2(576.1029, 323.99997)
 scale = Vector2(3.845981, 3.811765)
-texture = ExtResource("1_bo6x4")
+texture = ExtResource("2_8jmf2")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Caverna" unique_id=1910104980]
 position = Vector2(-14.001558, 32.494175)
@@ -118,23 +111,8 @@ position = Vector2(14.133652, 53.212776)
 scale = Vector2(0.9999996, 0.9999996)
 shape = SubResource("RectangleShape2D_bl2qc")
 
-[node name="TunelPerspectiva" type="Sprite2D" parent="Caverna" unique_id=465741996]
-position = Vector2(134.46776, 69.51041)
-scale = Vector2(1.9153069, 1.9153069)
-texture = ExtResource("2_poe85")
-flip_h = true
-
-[node name="Area2D" type="Area2D" parent="Caverna/TunelPerspectiva" unique_id=1957773738]
-script = ExtResource("3_y8tq0")
-next_scene = "res://cenas_principais/main.tscn"
-target_door_name = "RightDoor"
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Caverna/TunelPerspectiva/Area2D" unique_id=1795810679]
-position = Vector2(2.8965564, -0.094825745)
-shape = SubResource("RectangleShape2D_3sf0e")
-
 [node name="Player" type="CharacterBody2D" parent="." unique_id=367015234 groups=["player"]]
-z_index = 1
+z_index = 2
 position = Vector2(1063, 597)
 scale = Vector2(2, 2)
 script = ExtResource("1_4c57u")
@@ -149,18 +127,28 @@ shape = SubResource("RectangleShape2D_jr0gc")
 
 [node name="FadeLayer" parent="." unique_id=985700339 instance=ExtResource("13_ycdy4")]
 
-[node name="AreaEnigma" type="Area2D" parent="." unique_id=1324188481 node_paths=PackedStringArray("riddle_box")]
-position = Vector2(56, 154)
-script = ExtResource("8_y8tq0")
+[node name="DialogBox" parent="." unique_id=1381060849 instance=ExtResource("11_dlgbox")]
+visible = false
+som_proximo = ExtResource("9_8jmf2")
+
+[node name="RiddleBox" parent="." unique_id=1739927017 instance=ExtResource("9_ub0oe")]
+caminho_enigmas = "res://enigmas-vermelha.json"
+
+[node name="return_door" parent="." unique_id=185453454 instance=ExtResource("10_ub0oe")]
+position = Vector2(534, 0)
+cor_portal = Color(0.76862746, 0.015686275, 0.011764706, 0.5058824)
+next_scene = "res://cenas_principais/main.tscn"
+
+[node name="red_totem" parent="." unique_id=378956765 node_paths=PackedStringArray("riddle_box") instance=ExtResource("11_8jmf2")]
+position = Vector2(655, 576)
+scale = Vector2(2, 2)
 riddle_box = NodePath("../RiddleBox")
 cor = "vermelha"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="AreaEnigma" unique_id=1852638215]
-position = Vector2(601, 443.75)
-shape = SubResource("RectangleShape2D_poe85")
+[node name="CollisionShape2D" parent="red_totem" index="0" unique_id=2021860395]
+scale = Vector2(2, 2)
 
-[node name="DialogBox" parent="." instance=ExtResource("11_dlgbox")]
+[node name="totem_sprite" parent="red_totem" index="1" unique_id=1084312622]
+scale = Vector2(2, 2)
 
-[node name="RiddleBox" parent="." unique_id=1739927017 instance=ExtResource("9_ub0oe")]
-visible = false
-caminho_enigmas = "res://enigmas-vermelha.json"
+[editable path="red_totem"]

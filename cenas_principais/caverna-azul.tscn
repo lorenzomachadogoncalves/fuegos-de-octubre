@@ -1,22 +1,20 @@
 [gd_scene format=3 uid="uid://bkvge2x32luic"]
 
 [ext_resource type="Texture2D" uid="uid://bsbgpg8y4adig" path="res://assets/backgrounds/cavern.png" id="1_bm6uj"]
-[ext_resource type="Texture2D" uid="uid://d3qaeq408xjil" path="res://assets/backgrounds/tunel-perspectiva.jpeg" id="2_fowa1"]
-[ext_resource type="Script" uid="uid://t1x4nvvnbqmb" path="res://scripts/doorCenter/area_2d.gd" id="3_r12dw"]
 [ext_resource type="Script" uid="uid://kobogdbefd27" path="res://scripts/player.gd" id="4_k6aro"]
 [ext_resource type="Texture2D" uid="uid://gxf05ei02atu" path="res://assets/characters/1-Navigation/3-4 Idle-Sheet.png" id="5_aunwh"]
 [ext_resource type="Texture2D" uid="uid://umkww4jj5rg6" path="res://assets/characters/1-Navigation/Walk Sprite-Sheet.png" id="6_tedk5"]
 [ext_resource type="PackedScene" uid="uid://dyxstgyjsb7g7" path="res://cenas_reutilizaveis/FadeLayer.tscn" id="7_fc8nh"]
 [ext_resource type="PackedScene" uid="uid://dvu71m4yg3anc" path="res://riddle_box.tscn" id="8_fowa1"]
-[ext_resource type="Script" uid="uid://ddi117w8drqqk" path="res://scripts/area_enigma.gd" id="8_r12dw"]
-[ext_resource type="Script" path="res://scripts/caverna.gd" id="10_cvrna"]
+[ext_resource type="AudioStream" uid="uid://cxvghsj041r0j" path="res://assets/sounds/page_turn.wav" id="9_aunwh"]
+[ext_resource type="Script" uid="uid://w2lhqiwh6rtw" path="res://scripts/caverna.gd" id="10_cvrna"]
+[ext_resource type="PackedScene" uid="uid://dstgffvb828kd" path="res://cenas_reutilizaveis/Door.tscn" id="10_k6aro"]
 [ext_resource type="PackedScene" uid="uid://b7h4nms2p6dlx" path="res://cenas_reutilizaveis/DialogBox.tscn" id="11_dlgbox"]
+[ext_resource type="PackedScene" uid="uid://dqoegv44xhhn4" path="res://cenas_reutilizaveis/totem.tscn" id="11_tedk5"]
+[ext_resource type="Texture2D" uid="uid://bt46dyqkjdyyh" path="res://assets/objects/blue_totem.png" id="12_fc8nh"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bl2qc"]
 size = Vector2(300.90143, 1.2820053)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_3sf0e"]
-size = Vector2(9.931036, 16.189651)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_074og"]
 atlas = ExtResource("5_aunwh")
@@ -60,7 +58,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_074og")
 }],
-"loop": 1,
+"loop": true,
 "name": &"idle",
 "speed": 5.0
 }, {
@@ -89,7 +87,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_cegan")
 }],
-"loop": 1,
+"loop": true,
 "name": &"walk",
 "speed": 10.0
 }]
@@ -97,13 +95,9 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jr0gc"]
 size = Vector2(11.5, 47)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_bm6uj"]
-size = Vector2(54, 99.5)
-
 [node name="Node2D" type="Node2D" unique_id=424882871]
 script = ExtResource("10_cvrna")
 chave_dialogo = "caverna_azul"
-linhas_dialogo = PackedStringArray("[center]Caverna da Negação[/center]", "[center]A negação inverte o valor de uma afirmação.[/center]", "[center]Se P é FALSO, então ¬P é VERDADEIRO![/center]", "[center]Exemplo: P = 'O sol é azul' (falso). Então ¬P = 'O sol não é azul' (verdadeiro!).[/center]", "[center]Resolva os enigmas: transforme a afirmação em VERDADEIRA![/center]")
 
 [node name="Caverna" type="Sprite2D" parent="." unique_id=1161469274]
 position = Vector2(576.1029, 323.99997)
@@ -118,23 +112,8 @@ position = Vector2(14.133652, 53.212776)
 scale = Vector2(0.9999996, 0.9999996)
 shape = SubResource("RectangleShape2D_bl2qc")
 
-[node name="TunelPerspectiva" type="Sprite2D" parent="Caverna" unique_id=465741996]
-position = Vector2(134.46776, 69.51041)
-scale = Vector2(1.9153069, 1.9153069)
-texture = ExtResource("2_fowa1")
-flip_h = true
-
-[node name="Area2D" type="Area2D" parent="Caverna/TunelPerspectiva" unique_id=1957773738]
-script = ExtResource("3_r12dw")
-next_scene = "res://cenas_principais/main.tscn"
-target_door_name = "LeftDoor"
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Caverna/TunelPerspectiva/Area2D" unique_id=1795810679]
-position = Vector2(2.8965564, -0.094825745)
-shape = SubResource("RectangleShape2D_3sf0e")
-
 [node name="Player" type="CharacterBody2D" parent="." unique_id=367015234 groups=["player"]]
-z_index = 1
+z_index = 2
 position = Vector2(1063, 597)
 scale = Vector2(2, 2)
 script = ExtResource("4_k6aro")
@@ -149,17 +128,29 @@ shape = SubResource("RectangleShape2D_jr0gc")
 
 [node name="FadeLayer" parent="." unique_id=985700339 instance=ExtResource("7_fc8nh")]
 
-[node name="AreaEnigma" type="Area2D" parent="." unique_id=1705390857 node_paths=PackedStringArray("riddle_box")]
-position = Vector2(56, 154)
-script = ExtResource("8_r12dw")
-riddle_box = NodePath("../RiddleBox")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="AreaEnigma" unique_id=882959372]
-position = Vector2(601, 443.75)
-shape = SubResource("RectangleShape2D_bm6uj")
-
-[node name="DialogBox" parent="." instance=ExtResource("11_dlgbox")]
+[node name="DialogBox" parent="." unique_id=1861298014 instance=ExtResource("11_dlgbox")]
+visible = false
+som_proximo = ExtResource("9_aunwh")
 
 [node name="RiddleBox" parent="." unique_id=1739927017 instance=ExtResource("8_fowa1")]
-visible = false
 caminho_enigmas = "res://enigmas-azul.json"
+
+[node name="return_door" parent="." unique_id=185453454 instance=ExtResource("10_k6aro")]
+position = Vector2(535, 3)
+cor_portal = Color(0.12156863, 0.3764706, 0.8784314, 0.5137255)
+opacidade = 0.278
+next_scene = "res://cenas_principais/main.tscn"
+
+[node name="Totem" parent="." unique_id=142172213 node_paths=PackedStringArray("riddle_box") instance=ExtResource("11_tedk5")]
+position = Vector2(653, 576)
+scale = Vector2(2, 2)
+riddle_box = NodePath("../RiddleBox")
+
+[node name="CollisionShape2D" parent="Totem" index="0" unique_id=2021860395]
+scale = Vector2(2, 2)
+
+[node name="totem_sprite" parent="Totem" index="1" unique_id=1084312622]
+scale = Vector2(2, 2)
+texture = ExtResource("12_fc8nh")
+
+[editable path="Totem"]

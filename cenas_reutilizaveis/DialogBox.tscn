@@ -8,7 +8,6 @@ script = ExtResource("1_script")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=622638514]
 layer = 10
-visible = false
 
 [node name="Blocker" type="Control" parent="CanvasLayer" unique_id=893088963]
 layout_mode = 3
@@ -19,7 +18,6 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="Panel" type="Panel" parent="CanvasLayer" unique_id=1380427483]
-visible = false
 anchors_preset = 12
 anchor_top = 1.0
 anchor_right = 1.0
@@ -66,5 +64,26 @@ layout_mode = 2
 theme_override_fonts/font = ExtResource("2_font")
 theme_override_font_sizes/font_size = 24
 text = "Próximo"
+
+[node name="ChoiceContainer" type="HBoxContainer" parent="CanvasLayer/Panel/MarginContainer/VBoxContainer" unique_id=100000001]
+layout_mode = 2
+visible = false
+theme_override_constants/separation = 16
+
+[node name="BtnOpcao1" type="Button" parent="CanvasLayer/Panel/MarginContainer/VBoxContainer/ChoiceContainer" unique_id=100000002]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_fonts/font = ExtResource("2_font")
+theme_override_font_sizes/font_size = 22
+text = ""
+autowrap_mode = 3
+
+[node name="BtnOpcao2" type="Button" parent="CanvasLayer/Panel/MarginContainer/VBoxContainer/ChoiceContainer" unique_id=100000003]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_fonts/font = ExtResource("2_font")
+theme_override_font_sizes/font_size = 22
+text = ""
+autowrap_mode = 3
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="CanvasLayer" unique_id=883793439]

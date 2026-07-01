@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://dqoegv44xhhn4"]
+
+[ext_resource type="Script" uid="uid://ddi117w8drqqk" path="res://scripts/area_enigma.gd" id="1_fmowf"]
+[ext_resource type="Texture2D" uid="uid://bpes3kwimpd07" path="res://assets/objects/red_totem.png" id="1_g2qma"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fmowf"]
+size = Vector2(34, 29)
+
+[node name="Totem" type="Area2D" unique_id=142172213]
+script = ExtResource("1_fmowf")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2021860395]
+position = Vector2(0, 3.5)
+shape = SubResource("RectangleShape2D_fmowf")
+
+[node name="totem_sprite" type="Sprite2D" parent="." unique_id=1084312622]
+texture = ExtResource("1_g2qma")
