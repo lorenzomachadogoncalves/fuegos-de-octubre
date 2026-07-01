@@ -62,6 +62,12 @@ func gerar_enigma():
 	var enigma = enigmas.pick_random()
 	texto.text = enigma.frase
 	resposta = enigma.correta
+	var opcoes: Array = enigma.opcoes.duplicate()
+	opcoes.shuffle()
+	btn1.text = opcoes[0]
+	btn2.text = opcoes[1]
+	btn3.text = opcoes[2]
+	btn4.text = opcoes[3]
 
 func _atualizar_titulo():
 	titulo.text = "%d / 3" % acertos

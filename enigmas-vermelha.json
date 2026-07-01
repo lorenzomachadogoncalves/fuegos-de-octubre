@@ -1,26 +1,32 @@
 [
   {
-    "frase": "P: 'O céu é azul.' (verdadeiro)\nQ: 'A grama é verde.' (verdadeiro)\nQual expressão mostra que as DUAS são verdadeiras?",
-    "correta": "P ∧ Q"
+    "frase": "A: 'O sol ilumina.' (verdadeiro)\nB: 'Água molha.' (verdadeiro)\nC: 'Gatos têm asas.' (falso)\nD: 'Pedras voam.' (falso)\nQual expressão é VERDADEIRA?",
+    "correta": "A ∧ B",
+    "opcoes": ["A ∧ B", "A ∧ C", "B ∧ D", "C ∧ D"]
   },
   {
-    "frase": "P: 'O sol ilumina.' (verdadeiro)\nQ: 'A chuva molha.' (verdadeiro)\nQual expressão mostra que as DUAS são verdadeiras?",
-    "correta": "P ∧ Q"
+    "frase": "R: 'Leões são mamíferos.' (verdadeiro)\nS: 'Girafas são insetos.' (falso)\nT: 'Rios têm água.' (verdadeiro)\nU: 'Estrelas são frias.' (falso)\nQual expressão é VERDADEIRA?",
+    "correta": "R ∧ T",
+    "opcoes": ["R ∧ T", "R ∧ S", "S ∧ U", "T ∧ U"]
   },
   {
-    "frase": "P: 'Pássaros têm asas.' (verdadeiro)\nQ: 'Peixes têm guelras.' (verdadeiro)\nQual expressão mostra que as DUAS são verdadeiras?",
-    "correta": "P ∧ Q"
+    "frase": "A: 'Borboletas são répteis.' (falso)\nB: 'Flores têm pétalas.' (verdadeiro)\nC: 'Pássaros têm asas.' (verdadeiro)\nD: 'Peixes cantam ópera.' (falso)\nQual expressão é VERDADEIRA?",
+    "correta": "B ∧ C",
+    "opcoes": ["B ∧ C", "A ∧ B", "A ∧ D", "C ∧ D"]
   },
   {
-    "frase": "P: 'Leite é branco.' (verdadeiro)\nQ: 'Carvão é preto.' (verdadeiro)\nQual expressão mostra que as DUAS são verdadeiras?",
-    "correta": "P ∧ Q"
+    "frase": "R: 'Triângulos têm três lados.' (verdadeiro)\nS: 'Elefantes são minúsculos.' (falso)\nT: 'Cobras voam.' (falso)\nU: 'O gelo é frio.' (verdadeiro)\nQual expressão é VERDADEIRA?",
+    "correta": "R ∧ U",
+    "opcoes": ["R ∧ U", "R ∧ S", "S ∧ T", "T ∧ U"]
   },
   {
-    "frase": "P: 'Triângulos têm três lados.' (verdadeiro)\nQ: 'Quadrados têm quatro lados.' (verdadeiro)\nQual expressão mostra que as DUAS são verdadeiras?",
-    "correta": "P ∧ Q"
+    "frase": "A: 'Cachorros latem.' (verdadeiro)\nB: 'Peixes sobem em montanhas.' (falso)\nC: 'Rosas são salgadas.' (falso)\nD: 'A lua está no céu.' (verdadeiro)\nQual expressão é VERDADEIRA?",
+    "correta": "A ∧ D",
+    "opcoes": ["A ∧ D", "A ∧ B", "B ∧ C", "C ∧ D"]
   },
   {
-    "frase": "P: 'Fogo é quente.' (verdadeiro)\nQ: 'Gelo é frio.' (verdadeiro)\nQual expressão mostra que as DUAS são verdadeiras?",
-    "correta": "P ∧ Q"
+    "frase": "R: 'Galinhas botam ovos.' (verdadeiro)\nS: 'Peixes vivem na água.' (verdadeiro)\nT: 'Tartarugas correm rápido.' (falso)\nU: 'Polvos são mamíferos.' (falso)\nQual expressão é VERDADEIRA?",
+    "correta": "R ∧ S",
+    "opcoes": ["R ∧ S", "R ∧ T", "S ∧ U", "T ∧ U"]
   }
 ]

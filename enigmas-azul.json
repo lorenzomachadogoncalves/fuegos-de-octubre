@@ -1,26 +1,32 @@
 [
   {
-    "frase": "P: 'O sol é azul.' (falso)\nTransforme P em verdadeiro. Qual expressão resolve isso?",
-    "correta": "¬P"
+    "frase": "A: 'O sol é quente.' (verdadeiro)\nB: 'A neve é quente.' (falso)\nC: 'Gatos miam.' (verdadeiro)\nD: 'Peixes nadam.' (verdadeiro)\nQual expressão é VERDADEIRA?",
+    "correta": "¬B",
+    "opcoes": ["¬A", "¬B", "¬C", "¬D"]
   },
   {
-    "frase": "P: 'Gatos têm cinco patas.' (falso)\nQual expressão é verdadeira?",
-    "correta": "¬P"
+    "frase": "R: 'Elefantes são insetos.' (falso)\nS: 'Chuva molha.' (verdadeiro)\nT: 'Árvores têm raízes.' (verdadeiro)\nU: 'O mar é azul.' (verdadeiro)\nQual expressão é VERDADEIRA?",
+    "correta": "¬R",
+    "opcoes": ["¬R", "¬S", "¬T", "¬U"]
   },
   {
-    "frase": "P: 'Peixes vivem nas árvores.' (falso)\nQual expressão transforma P em verdadeiro?",
-    "correta": "¬P"
+    "frase": "A: 'Pássaros têm asas.' (verdadeiro)\nB: 'Pedras flutuam no ar.' (falso)\nC: 'Cachorros rugem.' (falso)\nD: 'Leões voam.' (falso)\nQual expressão resulta em FALSO?",
+    "correta": "¬A",
+    "opcoes": ["¬A", "¬B", "¬C", "¬D"]
   },
   {
-    "frase": "P: 'A lua é feita de queijo.' (falso)\nQual expressão é verdadeira?",
-    "correta": "¬P"
+    "frase": "R: 'Borboletas são répteis.' (falso)\nS: 'O gelo é frio.' (verdadeiro)\nT: 'Girassóis são flores.' (verdadeiro)\nU: 'Vacas têm quatro patas.' (verdadeiro)\nQual expressão é VERDADEIRA?",
+    "correta": "¬R",
+    "opcoes": ["¬R", "¬S", "¬T", "¬U"]
   },
   {
-    "frase": "P: 'Cachorros voam.' (falso)\nTransforme P em verdadeiro. Qual expressão resolve isso?",
-    "correta": "¬P"
+    "frase": "A: 'A lua brilha à noite.' (verdadeiro)\nB: 'Peixes vivem nas nuvens.' (falso)\nC: 'Triângulos têm quatro lados.' (falso)\nD: 'Cobras têm pernas.' (falso)\nQual expressão resulta em FALSO?",
+    "correta": "¬A",
+    "opcoes": ["¬A", "¬B", "¬C", "¬D"]
   },
   {
-    "frase": "P: 'O fogo é frio.' (falso)\nQual expressão é verdadeira?",
-    "correta": "¬P"
+    "frase": "R: 'Formigas são gigantes.' (falso)\nS: 'Água ferve a 100°C.' (verdadeiro)\nT: 'Rosas são flores.' (verdadeiro)\nU: 'O fogo é quente.' (verdadeiro)\nQual expressão é VERDADEIRA?",
+    "correta": "¬R",
+    "opcoes": ["¬R", "¬S", "¬T", "¬U"]
   }
 ]
