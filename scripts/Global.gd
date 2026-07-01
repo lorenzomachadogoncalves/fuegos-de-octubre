@@ -88,3 +88,21 @@ func game_over():
 	await get_tree().process_frame
 	await get_tree().process_frame
 	_overlay.color = Color(0, 0, 0, 0)
+
+func reiniciar_completo():
+	erros = 0
+	flor_azul = false
+	flor_verde = false
+	flor_vermelha = false
+	tem_flor_para_entregar = false
+	color_channels["red"] = 0.0
+	color_channels["green"] = 0.0
+	color_channels["blue"] = 0.0
+	dialogos_vistos.clear()
+	game_mode = "simbolos"
+
+	get_tree().change_scene_to_file("res://cenas_principais/main.tscn")
+
+	await get_tree().process_frame
+	await get_tree().process_frame
+	_overlay.color = Color(0, 0, 0, 0)

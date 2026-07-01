@@ -129,14 +129,23 @@ func _on_desafio_final_concluido(player: Node) -> void:
 	var dialog = cena.get_node_or_null("DialogBox")
 	Global.dialogos_vistos["desafio_final_concluido"] = true
 	if dialog:
-		dialog.terminou.connect(func():
-			player.can_move = true
-			_processando = false
-		, CONNECT_ONE_SHOT)
+		dialog.terminou.connect(_finalizar_jogo.bind(player), CONNECT_ONE_SHOT)
 		dialog.mostrar(_DIALOGO_VITORIA)
 	else:
-		player.can_move = true
-		_processando = false
+		await _finalizar_jogo(player)
+
+func _finalizar_jogo(player: Node) -> void:
+	player.can_move = false
+	var cena = get_tree().current_scene
+	var fade = cena.get_node_or_null("FadeInFinal")
+	if fade:
+		var anim = fade.get_node_or_null("AnimationPlayer")
+		if anim:
+			anim.play("final_fade_in")
+			await anim.animation_finished
+	await get_tree().create_timer(0.6).timeout
+	_processando = false
+	Global.reiniciar_completo()
 
 func _restaurar_flores():
 	var cena = get_tree().current_scene
