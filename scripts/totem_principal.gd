@@ -119,6 +119,7 @@ func _iniciar_desafio_final(player: Node) -> void:
 	riddle_box.caminho_enigmas = caminho
 	riddle_box.recompensa = "final"
 	riddle_box.totem = null
+	riddle_box.acertos_necessarios = 3
 	riddle_box.desafio_final_concluido.connect(
 		_on_desafio_final_concluido.bind(player), CONNECT_ONE_SHOT
 	)

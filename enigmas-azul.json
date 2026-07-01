@@ -28,5 +28,25 @@
     "frase": "Sabemos que R ∧ S é verdadeiro:\nR: 'Leões são mamíferos.'\nS: 'Galinhas botam ovos.'\nO que podemos concluir?",
     "correta": "S é verdadeiro",
     "opcoes": ["S é verdadeiro", "R é falso", "¬S é verdadeiro", "R ∧ S é falso"]
+  },
+  {
+    "frase": "Regra: P → Q\nP: 'O alarme tocou.' (verdadeiro)\nQ: 'Todos acordaram.' (verdadeiro)\nDado que P é verdadeiro, o que se conclui?",
+    "correta": "Q é verdadeiro",
+    "opcoes": ["Q é verdadeiro", "Q é falso", "P é falso", "P ∧ Q é falso"]
+  },
+  {
+    "frase": "Sabemos que A ∧ B é verdadeiro:\nA: 'A porta está trancada.'\nB: 'A chave está escondida.'\nO que podemos concluir?",
+    "correta": "B é verdadeiro",
+    "opcoes": ["B é verdadeiro", "B é falso", "¬A é verdadeiro", "A ∧ B é falso"]
+  },
+  {
+    "frase": "Regra: C → D\nC: 'A semente foi plantada.' (verdadeiro)\nD: 'A planta vai crescer.' (verdadeiro)\nDado que C é verdadeiro, o que se conclui?",
+    "correta": "D é verdadeiro",
+    "opcoes": ["D é verdadeiro", "D é falso", "C é falso", "C → D é falso"]
+  },
+  {
+    "frase": "Sabemos que P ∧ Q é verdadeiro:\nP: 'A vela está acesa.'\nQ: 'A sala está iluminada.'\nO que podemos afirmar com certeza?",
+    "correta": "P é verdadeiro",
+    "opcoes": ["P é verdadeiro", "Q é falso", "¬Q é verdadeiro", "P ∧ Q é falso"]
   }
 ]

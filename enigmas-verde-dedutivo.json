@@ -28,5 +28,25 @@
     "frase": "R: 'Cobras têm quatro pernas.' (falso)\nS: 'Pinguins sobem em árvores.' (falso)\nT: 'Tartarugas correm rápido.' (falso)\nU: 'Cachorros latem.' (verdadeiro)\nQual opção é VERDADEIRA?",
     "correta": "R ou U é verdadeira",
     "opcoes": ["R e U são verdadeiras", "S e U são verdadeiras", "S ou T é verdadeira", "R ou U é verdadeira"]
+  },
+  {
+    "frase": "A: 'Abelhas fazem mel.' (verdadeiro)\nB: 'Baleias voam.' (falso)\nC: 'A grama é verde.' (verdadeiro)\nD: 'O sol é frio.' (falso)\nQual opção é VERDADEIRA?",
+    "correta": "A e C são verdadeiras",
+    "opcoes": ["A e C são verdadeiras", "A e B são verdadeiras", "B ou D é verdadeira", "C e D são verdadeiras"]
+  },
+  {
+    "frase": "R: 'Sapos pulam.' (verdadeiro)\nS: 'Pedras nadam.' (falso)\nT: 'Fogo é gelado.' (falso)\nU: 'Formigas são plantas.' (falso)\nQual opção é VERDADEIRA?",
+    "correta": "R ou S é verdadeira",
+    "opcoes": ["R e S são verdadeiras", "S e T são verdadeiras", "T ou U é verdadeira", "R ou S é verdadeira"]
+  },
+  {
+    "frase": "A: 'O mel é doce.' (verdadeiro)\nB: 'A lua tem luz própria.' (falso)\nC: 'Cavalos galopam.' (verdadeiro)\nD: 'Peixes voam.' (falso)\nQual opção é VERDADEIRA?",
+    "correta": "A e C são verdadeiras",
+    "opcoes": ["A e C são verdadeiras", "B e D são verdadeiras", "A e B são verdadeiras", "C e D são verdadeiras"]
+  },
+  {
+    "frase": "R: 'Aranhas tecem teias.' (verdadeiro)\nS: 'Nuvens são sólidas.' (falso)\nT: 'O gelo é quente.' (falso)\nU: 'Baleias andam.' (falso)\nQual opção é VERDADEIRA?",
+    "correta": "R ou T é verdadeira",
+    "opcoes": ["S e T são verdadeiras", "R e U são verdadeiras", "T ou U é verdadeira", "R ou T é verdadeira"]
   }
 ]

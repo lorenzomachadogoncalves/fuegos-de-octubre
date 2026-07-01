@@ -28,5 +28,25 @@
     "frase": "Sabemos que AMBAS são verdadeiras:\n- 'Leões são mamíferos.'\n- 'Galinhas botam ovos.'\nO que podemos concluir sobre as galinhas?",
     "correta": "Galinhas botam ovos.",
     "opcoes": ["Galinhas botam ovos.", "Galinhas são mamíferos.", "Leões botam ovos.", "Não podemos saber."]
+  },
+  {
+    "frase": "Regra: SE o alarme tocou, ENTÃO todos acordaram.\nO alarme tocou. (verdadeiro)\nO que podemos concluir?",
+    "correta": "Todos acordaram.",
+    "opcoes": ["Todos acordaram.", "Ninguém acordou.", "O alarme não tocou.", "Não podemos saber."]
+  },
+  {
+    "frase": "Sabemos que AMBAS são verdadeiras:\n- 'A porta está trancada.'\n- 'A chave está escondida.'\nO que podemos concluir sobre a chave?",
+    "correta": "A chave está escondida.",
+    "opcoes": ["A chave está escondida.", "A chave está à vista.", "A porta está aberta.", "Não podemos saber."]
+  },
+  {
+    "frase": "Regra: SE a semente foi plantada, ENTÃO a planta vai crescer.\nA semente foi plantada. (verdadeiro)\nO que podemos concluir?",
+    "correta": "A planta vai crescer.",
+    "opcoes": ["A planta vai crescer.", "A planta não vai crescer.", "A semente não foi plantada.", "Não podemos saber."]
+  },
+  {
+    "frase": "Sabemos que AMBAS são verdadeiras:\n- 'A vela está acesa.'\n- 'A sala está iluminada.'\nO que podemos afirmar sobre a vela?",
+    "correta": "A vela está acesa.",
+    "opcoes": ["A vela está acesa.", "A vela está apagada.", "A sala está escura.", "Não podemos saber."]
   }
 ]

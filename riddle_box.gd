@@ -8,6 +8,7 @@ var totem: Node = null
 var enigmas = []
 var resposta = ""
 var acertos = 0
+var acertos_necessarios: int = 3
 
 @onready var som_acerto = $SomAcerto
 @onready var som_erro = $SomErro
@@ -37,7 +38,7 @@ func _on_resposta_pressed(botao: Button):
 		som_acerto.play()
 		acertos += 1
 		_atualizar_titulo()
-		if acertos >= 3:
+		if acertos >= acertos_necessarios:
 			mostrar_recompensa()
 		else:
 			gerar_enigma()
@@ -60,7 +61,14 @@ func carregar_enigmas():
 	return json.data
 
 func gerar_enigma():
-	var enigma = enigmas.pick_random()
+	var vistos: Array = Global.enigmas_vistos.get(caminho_enigmas, [])
+	var disponiveis: Array = enigmas.filter(func(e): return not (str(e.frase) in vistos))
+	if disponiveis.is_empty():
+		vistos = []
+		disponiveis = enigmas
+	var enigma = disponiveis.pick_random()
+	vistos.append(str(enigma.frase))
+	Global.enigmas_vistos[caminho_enigmas] = vistos
 	texto.text = str(enigma.frase)
 	resposta = str(enigma.correta)
 	var opcoes: Array = enigma.opcoes.duplicate()
@@ -71,12 +79,12 @@ func gerar_enigma():
 	btn4.text = str(opcoes[3])
 
 func _atualizar_titulo():
-	titulo.text = "%d / 3" % acertos
+	titulo.text = "%d / %d" % [acertos, acertos_necessarios]
 
 func abrir():
 	enigmas = carregar_enigmas()
 	acertos = 0
-	titulo.text = "0 / 3"
+	titulo.text = "0 / %d" % acertos_necessarios
 	gerar_enigma()
 	$CanvasLayer.show()
 	var player = get_tree().get_first_node_in_group("player")

@@ -28,5 +28,25 @@
     "frase": "P: 'Cachorros latem.' (verdadeiro)\nQ: 'Gatos voam.' (falso)\nR: 'Polvos vivem no mar.' (verdadeiro)\nS: 'Leões têm penas.' (falso)\nQual opção é VERDADEIRA?",
     "correta": "P e R são verdadeiros",
     "opcoes": ["P e R são verdadeiros", "Q ou S é verdadeira", "P e Q são verdadeiros", "NÃO P é verdadeiro"]
+  },
+  {
+    "frase": "P: 'O mel é doce.' (verdadeiro)\nQ: 'Aranhas têm oito patas.' (verdadeiro)\nR: 'Baleias voam.' (falso)\nQual opção é VERDADEIRA?",
+    "correta": "NÃO R é verdadeiro",
+    "opcoes": ["NÃO P é verdadeiro", "NÃO R é verdadeiro", "NÃO Q é verdadeiro", "P e R são verdadeiros"]
+  },
+  {
+    "frase": "A: 'O sol é quente.' (verdadeiro)\nB: 'Cavalos galopam.' (verdadeiro)\nC: 'Pedras cantam.' (falso)\nD: 'Peixes andam.' (falso)\nQual opção é VERDADEIRA?",
+    "correta": "A e B são verdadeiras",
+    "opcoes": ["A e B são verdadeiras", "C ou D é verdadeira", "A e C são verdadeiras", "NÃO A é verdadeiro"]
+  },
+  {
+    "frase": "R: 'Formigas são gigantes.' (falso)\nS: 'Abelhas fazem mel.' (verdadeiro)\nT: 'A neve é quente.' (falso)\nU: 'O gelo dança.' (falso)\nQual opção é VERDADEIRA?",
+    "correta": "R ou S é verdadeira",
+    "opcoes": ["R e S são verdadeiras", "R ou S é verdadeira", "T ou U é verdadeira", "NÃO S é verdadeiro"]
+  },
+  {
+    "frase": "Regra: SE o sino tocou, ENTÃO a aula começou.\nO sino tocou. (verdadeiro)\nO que podemos concluir?",
+    "correta": "A aula começou.",
+    "opcoes": ["A aula começou.", "A aula não começou.", "O sino não tocou.", "Não podemos concluir nada."]
   }
 ]

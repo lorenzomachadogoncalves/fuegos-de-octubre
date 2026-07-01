@@ -12,7 +12,7 @@ Cada cenário principal tem **portas** (vermelha, verde, azul) com efeito visual
 
 - Ao entrar na caverna pela **primeira vez**, exibe um diálogo introdutório narrativo (tom sombrio) explicando o mundo e o sistema de erros.
 - Ao clicar no totem pela **primeira vez**, exibe um diálogo explicando o operador lógico daquela caverna (¬, ∧ ou ∨).
-- O totem abre o `riddle_box`, que exibe enigmas de lógica proposicional (múltipla escolha, 3 acertos necessários).
+- O totem abre o `riddle_box`, que exibe enigmas de lógica proposicional (múltipla escolha, 5 acertos necessários nas cavernas; o desafio final exige 3).
 - Ao concluir, uma **flor animada** voa do centro da tela até o jogador, o totem faz fade-out, e um diálogo de conclusão aparece.
 - A flor é registrada em `Global` e aparece no **totem principal** da cena principal para colorir o mundo.
 - Cada erro escurece o mundo progressivamente (overlay preto em `Global`). Com 3 erros ocorre game over: mundo reseta ao cinza, flores e `color_channels` são zerados.
@@ -92,8 +92,9 @@ Todos os diálogos verificam `Global.dialogos_vistos[chave]` antes de exibir —
 
 ### Sistema de enigmas e flores
 
-- `area_enigma.gd` seta `riddle_box.recompensa`, `riddle_box.totem` e chama `riddle_box.abrir()`.
-- `riddle_box.gd` exige 3 acertos. Acerto toca `hit.wav`, erro toca `error.mp3` e chama `Global.registrar_erro()`.
+- `area_enigma.gd` seta `riddle_box.recompensa`, `riddle_box.totem`, `riddle_box.acertos_necessarios = 5` e chama `riddle_box.abrir()`.
+- `riddle_box.gd` exige `acertos_necessarios` acertos (configurável por quem abre o terminal; 5 nas cavernas, 3 no desafio final). Acerto toca `hit.wav`, erro toca `error.mp3` e chama `Global.registrar_erro()`.
+- Não repete enigmas na mesma sessão: `gerar_enigma()` sorteia apenas entre as questões ainda não vistas (`Global.enigmas_vistos`, por arquivo), com fallback quando o pool se esgota. O rastreio é limpo em `game_over()` e `reiniciar_completo()`.
 - Ao completar: painel some → `FlorAnimada` instanciada voa do centro da tela até o jogador → totem faz fade-out (2s) → diálogo de conclusão → CanvasLayer fecha → player liberado → `Global.tem_flor_para_entregar = true`.
 - Flores registradas em `Global.flor_azul/verde/vermelha`.
 

@@ -81,6 +81,7 @@ func _abrir_riddle() -> void:
 		riddle_box.caminho_enigmas = "res://enigmas-%s.json" % cor
 	riddle_box.recompensa = cor
 	riddle_box.totem = self
+	riddle_box.acertos_necessarios = 5
 	riddle_box.abrir()
 
 func _ja_completado() -> bool:

@@ -28,5 +28,25 @@
     "frase": "R: 'Formigas são gigantes.' (falso)\nS: 'Água ferve a 100°C.' (verdadeiro)\nT: 'Rosas são flores.' (verdadeiro)\nU: 'O fogo é quente.' (verdadeiro)\nQual expressão é VERDADEIRA?",
     "correta": "¬R",
     "opcoes": ["¬R", "¬S", "¬T", "¬U"]
+  },
+  {
+    "frase": "A: 'O oceano é seco.' (falso)\nB: 'Abelhas fazem mel.' (verdadeiro)\nC: 'Cavalos galopam.' (verdadeiro)\nD: 'Sapos pulam.' (verdadeiro)\nQual expressão é VERDADEIRA?",
+    "correta": "¬A",
+    "opcoes": ["¬A", "¬B", "¬C", "¬D"]
+  },
+  {
+    "frase": "R: 'Cavalos galopam.' (verdadeiro)\nS: 'Pedras falam.' (falso)\nT: 'O céu é verde.' (falso)\nU: 'Peixes dirigem carros.' (falso)\nQual expressão resulta em FALSO?",
+    "correta": "¬R",
+    "opcoes": ["¬R", "¬S", "¬T", "¬U"]
+  },
+  {
+    "frase": "A: 'Aranhas têm oito patas.' (verdadeiro)\nB: 'O sol é gelado.' (falso)\nC: 'Cachorros nadam.' (verdadeiro)\nD: 'Rosas têm espinhos.' (verdadeiro)\nQual expressão é VERDADEIRA?",
+    "correta": "¬B",
+    "opcoes": ["¬A", "¬B", "¬C", "¬D"]
+  },
+  {
+    "frase": "R: 'Baleias vivem no mar.' (verdadeiro)\nS: 'Pinguins são de fogo.' (falso)\nT: 'O gelo é quente.' (falso)\nU: 'Livros voam sozinhos.' (falso)\nQual expressão resulta em FALSO?",
+    "correta": "¬R",
+    "opcoes": ["¬R", "¬S", "¬T", "¬U"]
   }
 ]

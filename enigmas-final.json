@@ -28,5 +28,25 @@
     "frase": "P: 'Cachorros latem.' (verdadeiro)\nQ: 'Gatos voam.' (falso)\nR: 'Polvos vivem no mar.' (verdadeiro)\nS: 'Leões têm penas.' (falso)\nQual expressão é VERDADEIRA?",
     "correta": "P ∧ R",
     "opcoes": ["P ∧ R", "Q ∨ S", "P ∧ Q", "¬P"]
+  },
+  {
+    "frase": "P: 'O mel é doce.' (verdadeiro)\nQ: 'Aranhas têm oito patas.' (verdadeiro)\nR: 'Baleias voam.' (falso)\nQual expressão é VERDADEIRA?",
+    "correta": "¬R",
+    "opcoes": ["¬P", "¬R", "¬Q", "P ∧ R"]
+  },
+  {
+    "frase": "A: 'O sol é quente.' (verdadeiro)\nB: 'Cavalos galopam.' (verdadeiro)\nC: 'Pedras cantam.' (falso)\nD: 'Peixes andam.' (falso)\nQual expressão é VERDADEIRA?",
+    "correta": "A ∧ B",
+    "opcoes": ["A ∧ B", "C ∨ D", "A ∧ C", "¬A"]
+  },
+  {
+    "frase": "R: 'Formigas são gigantes.' (falso)\nS: 'Abelhas fazem mel.' (verdadeiro)\nT: 'A neve é quente.' (falso)\nU: 'O gelo dança.' (falso)\nQual expressão é VERDADEIRA?",
+    "correta": "R ∨ S",
+    "opcoes": ["R ∧ S", "R ∨ S", "T ∨ U", "¬S"]
+  },
+  {
+    "frase": "Regra: P → Q\nP: 'O sino tocou.' (verdadeiro)\nQ: 'A aula começou.' (verdadeiro)\nDado que P é verdadeiro, o que se conclui?",
+    "correta": "Q é verdadeiro",
+    "opcoes": ["Q é verdadeiro", "Q é falso", "¬P é verdadeiro", "P ∧ Q é falso"]
   }
 ]
