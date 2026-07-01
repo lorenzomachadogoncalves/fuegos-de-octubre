@@ -41,11 +41,13 @@ func abrir_desafio():
 		dialog_box.mostrar(_DIALOGOS.get(chave, []))
 	else:
 		riddle_box.recompensa = cor
+		riddle_box.totem = self
 		riddle_box.abrir()
 
 func _dialogo_visto() -> void:
 	Global.dialogos_vistos["caverna_" + cor] = true
 	riddle_box.recompensa = cor
+	riddle_box.totem = self
 	riddle_box.abrir()
 
 func _ja_completado() -> bool:

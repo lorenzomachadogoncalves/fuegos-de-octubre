@@ -117,3 +117,7 @@ offset_left = 100.0
 offset_right = 150.0
 offset_bottom = 50.0
 texture = ExtResource("5_0fu26")
+
+[node name="SomAcerto" type="AudioStreamPlayer" parent="." unique_id=300000001]
+
+[node name="SomErro" type="AudioStreamPlayer" parent="." unique_id=300000002]

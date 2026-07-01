@@ -5,7 +5,7 @@ extends Node2D
 const _DIALOGO_INTRO := [
 	"Hm... você realmente entrou aqui.",
 	"Estas cavernas são os últimos lugares onde ainda existe cor neste mundo... e também alguma lógica.",
-	"Lá dentro, você vai encontrar um terminal. Ele guarda um fragmento de lógica junto com uma cor perdida.",
+	"Aqui dentro, você vai encontrar um terminal. Ele guarda um fragmento de lógica junto com uma cor perdida.",
 	"Se você resolver os enigmas que ele propõe, essa cor poderá ser devolvida ao mundo lá de fora.",
 	"Mas cuidado: cada resposta errada faz o mundo ficar um pouco mais escuro.",
 	"Com três erros... bem, vamos dizer que o escuro não volta mais. E você recomeça do zero.",

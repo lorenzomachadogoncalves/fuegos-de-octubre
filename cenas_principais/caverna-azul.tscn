@@ -6,10 +6,12 @@
 [ext_resource type="Texture2D" uid="uid://umkww4jj5rg6" path="res://assets/characters/1-Navigation/Walk Sprite-Sheet.png" id="6_tedk5"]
 [ext_resource type="PackedScene" uid="uid://dyxstgyjsb7g7" path="res://cenas_reutilizaveis/FadeLayer.tscn" id="7_fc8nh"]
 [ext_resource type="PackedScene" uid="uid://dvu71m4yg3anc" path="res://riddle_box.tscn" id="8_fowa1"]
-[ext_resource type="Script" uid="uid://ddi117w8drqqk" path="res://scripts/area_enigma.gd" id="8_r12dw"]
+[ext_resource type="AudioStream" uid="uid://cxvghsj041r0j" path="res://assets/sounds/page_turn.wav" id="9_aunwh"]
 [ext_resource type="Script" uid="uid://w2lhqiwh6rtw" path="res://scripts/caverna.gd" id="10_cvrna"]
 [ext_resource type="PackedScene" uid="uid://dstgffvb828kd" path="res://cenas_reutilizaveis/Door.tscn" id="10_k6aro"]
 [ext_resource type="PackedScene" uid="uid://b7h4nms2p6dlx" path="res://cenas_reutilizaveis/DialogBox.tscn" id="11_dlgbox"]
+[ext_resource type="PackedScene" uid="uid://dqoegv44xhhn4" path="res://cenas_reutilizaveis/totem.tscn" id="11_tedk5"]
+[ext_resource type="Texture2D" uid="uid://bt46dyqkjdyyh" path="res://assets/objects/blue_totem.png" id="12_fc8nh"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bl2qc"]
 size = Vector2(300.90143, 1.2820053)
@@ -93,9 +95,6 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jr0gc"]
 size = Vector2(11.5, 47)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_bm6uj"]
-size = Vector2(54, 99.5)
-
 [node name="Node2D" type="Node2D" unique_id=424882871]
 script = ExtResource("10_cvrna")
 chave_dialogo = "caverna_azul"
@@ -129,17 +128,9 @@ shape = SubResource("RectangleShape2D_jr0gc")
 
 [node name="FadeLayer" parent="." unique_id=985700339 instance=ExtResource("7_fc8nh")]
 
-[node name="AreaEnigma" type="Area2D" parent="." unique_id=1705390857 node_paths=PackedStringArray("riddle_box")]
-position = Vector2(56, 154)
-script = ExtResource("8_r12dw")
-riddle_box = NodePath("../RiddleBox")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="AreaEnigma" unique_id=882959372]
-position = Vector2(601, 443.75)
-shape = SubResource("RectangleShape2D_bm6uj")
-
 [node name="DialogBox" parent="." unique_id=1861298014 instance=ExtResource("11_dlgbox")]
 visible = false
+som_proximo = ExtResource("9_aunwh")
 
 [node name="RiddleBox" parent="." unique_id=1739927017 instance=ExtResource("8_fowa1")]
 caminho_enigmas = "res://enigmas-azul.json"
@@ -149,3 +140,17 @@ position = Vector2(535, 3)
 cor_portal = Color(0.12156863, 0.3764706, 0.8784314, 0.5137255)
 opacidade = 0.278
 next_scene = "res://cenas_principais/main.tscn"
+
+[node name="Totem" parent="." unique_id=142172213 node_paths=PackedStringArray("riddle_box") instance=ExtResource("11_tedk5")]
+position = Vector2(653, 576)
+scale = Vector2(2, 2)
+riddle_box = NodePath("../RiddleBox")
+
+[node name="CollisionShape2D" parent="Totem" index="0" unique_id=2021860395]
+scale = Vector2(2, 2)
+
+[node name="totem_sprite" parent="Totem" index="1" unique_id=1084312622]
+scale = Vector2(2, 2)
+texture = ExtResource("12_fc8nh")
+
+[editable path="Totem"]
