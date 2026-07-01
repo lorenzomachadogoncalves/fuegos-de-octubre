@@ -94,19 +94,32 @@ Todos os diálogos verificam `Global.dialogos_vistos[chave]` antes de exibir —
 
 - `area_enigma.gd` seta `riddle_box.recompensa`, `riddle_box.totem` e chama `riddle_box.abrir()`.
 - `riddle_box.gd` exige 3 acertos. Acerto toca `hit.wav`, erro toca `error.mp3` e chama `Global.registrar_erro()`.
-- Ao completar: painel some → `FlorAnimada` instanciada voa do centro da tela até o jogador → totem faz fade-out (2s) → diálogo de conclusão → CanvasLayer fecha → player liberado.
-- Flores registradas em `Global.flor_azul/verde/vermelha`. O `totem_principal.gd` lê esses flags.
+- Ao completar: painel some → `FlorAnimada` instanciada voa do centro da tela até o jogador → totem faz fade-out (2s) → diálogo de conclusão → CanvasLayer fecha → player liberado → `Global.tem_flor_para_entregar = true`.
+- Flores registradas em `Global.flor_azul/verde/vermelha`.
+
+### Entrega de flores no totem principal
+
+Ao retornar à cena principal com `tem_flor_para_entregar = true`, o jogador não pode mais entrar em outras cavernas (`area_2d.gd` bloqueia cliques em portas cujo `next_scene` contém `"caverna"` e exibe diálogo de aviso). O fluxo ao clicar no totem principal:
+
+1. `totem_principal.gd._colocar_flores()` congela o jogador.
+2. Para cada flor pendente (sequencialmente): instancia `FlorAnimada`, ela voa de 160px acima do nó `FlorX` até ele.
+3. Ao chegar: `FlorX.show()` + `color_filter.unlock_color_animado(cor)` inicia fade-in do canal de cor.
+4. Após todas as flores: diálogo de agradecimento via `DialogBox`.
+5. Ao fechar o diálogo: player liberado, `tem_flor_para_entregar = false`.
+
+`color_filter.gd` tem `unlock_color_animado(color, duracao)` que usa `tween_method(_set_canal.bind(color), 0.0, 1.0, duracao)` para animar o canal gradualmente. `_restaurar_flores()` em `_ready()` re-exibe `FlorX` nodes para flores já entregues em sessões anteriores (lê `color_channels >= 1.0`).
 
 ### Estado global (`Global.gd`)
 
 Autoload (`Global="*res://scripts/Global.gd"`). Persiste entre cenas:
 - `target_door_name: String` — porta de chegada para posicionar o player
-- `flor_azul/verde/vermelha: bool` — flores coletadas
+- `flor_azul/verde/vermelha: bool` — flores coletadas nas cavernas
 - `color_channels: Dictionary` — canais R/G/B (0.0–1.0) para colorização
-- `dialogos_vistos: Dictionary` — chaves de diálogos já exibidos
+- `dialogos_vistos: Dictionary` — chaves de diálogos já exibidos (nunca reseta)
 - `erros: int` — contador de erros (game over em 3)
+- `tem_flor_para_entregar: bool` — bloqueia entrada em cavernas até entregar no totem principal
 
-No `game_over()`: reseta `erros`, flores e `color_channels` para 0. **Não** reseta `dialogos_vistos`.
+No `game_over()`: reseta `erros`, flores, `color_channels` e `tem_flor_para_entregar` para 0/false. **Não** reseta `dialogos_vistos`.
 
 ### Player
 
@@ -114,7 +127,9 @@ No `game_over()`: reseta `erros`, flores e `color_channels` para 0. **Não** res
 
 ### Colorização do mundo
 
-`ColorFilter.tscn` instanciado na `main.tscn`. `color_filter.gd` lê `Global.color_channels` e aplica via shader. `totem_principal.gd` chama `color_filter.unlock_color(cor)` ao receber uma flor, que seta o canal para 1.0.
+`ColorFilter.tscn` instanciado na `main.tscn`. `color_filter.gd` lê `Global.color_channels` e aplica via shader (`red_amount`, `green_amount`, `blue_amount`). Métodos disponíveis:
+- `unlock_color(color)` — seta canal para 1.0 instantaneamente (usado em `_restaurar_flores`)
+- `unlock_color_animado(color, duracao)` — anima o canal de 0.0 → 1.0 via tween (usado na entrega ao totem)
 
 ## Regras de código
 

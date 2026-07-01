@@ -1,5 +1,7 @@
 extends Area2D
 
+var _processando := false
+
 func _ready():
 	_restaurar_flores()
 
@@ -7,7 +9,7 @@ func _input_event(_viewport, event, _shape_idx):
 	if event is InputEventMouseButton \
 	and event.button_index == MOUSE_BUTTON_LEFT \
 	and event.pressed:
-		if _tem_flores_para_colocar():
+		if not _processando and _tem_flores_para_colocar():
 			var player = get_tree().get_first_node_in_group("player")
 			player.move_to_totem(self, $CollisionShape2D.global_position.x)
 
@@ -25,6 +27,7 @@ func _colocar_flores():
 	if not color_filter:
 		return
 
+	_processando = true
 	var player = get_tree().get_first_node_in_group("player")
 	player.can_move = false
 
@@ -37,10 +40,13 @@ func _colocar_flores():
 	var pendentes := []
 	if Global.flor_azul     and Global.color_channels["blue"]  < 1.0:
 		pendentes.append(["blue",  "FlorAzul"])
+		Global.flor_azul = false
 	if Global.flor_verde    and Global.color_channels["green"] < 1.0:
 		pendentes.append(["green", "FlorVerde"])
+		Global.flor_verde = false
 	if Global.flor_vermelha and Global.color_channels["red"]   < 1.0:
 		pendentes.append(["red",   "FlorVermelha"])
+		Global.flor_vermelha = false
 
 	for par in pendentes:
 		var cor: String     = par[0]
@@ -63,6 +69,7 @@ func _colocar_flores():
 		dialog.terminou.connect(func():
 			player.can_move = true
 			Global.tem_flor_para_entregar = false
+			_processando = false
 		, CONNECT_ONE_SHOT)
 		dialog.mostrar([
 			"A cor voltou... pelo menos um pouco.",
@@ -72,6 +79,7 @@ func _colocar_flores():
 	else:
 		player.can_move = true
 		Global.tem_flor_para_entregar = false
+		_processando = false
 
 func _restaurar_flores():
 	var cena = get_tree().current_scene
