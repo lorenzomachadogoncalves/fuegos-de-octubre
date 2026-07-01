@@ -75,6 +75,9 @@ func game_over():
 	flor_azul = false
 	flor_verde = false
 	flor_vermelha = false
+	color_channels["red"] = 0.0
+	color_channels["green"] = 0.0
+	color_channels["blue"] = 0.0
 
 	get_tree().change_scene_to_file("res://cenas_principais/main.tscn")
 
