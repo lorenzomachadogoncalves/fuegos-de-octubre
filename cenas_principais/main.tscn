@@ -7,9 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://botslb7s7ulcf" path="res://assets/backgrounds/Layer02.png" id="5_ycdy4"]
 [ext_resource type="Texture2D" uid="uid://cvx66nh4m0mdl" path="res://assets/backgrounds/Layer03.png" id="6_w48qg"]
 [ext_resource type="Texture2D" uid="uid://umkww4jj5rg6" path="res://assets/characters/1-Navigation/Walk Sprite-Sheet.png" id="10_4c57u"]
-[ext_resource type="Texture2D" uid="uid://cg4upph0rvaew" path="res://assets/backgrounds/blue_door.png" id="10_w2cfx"]
 [ext_resource type="PackedScene" uid="uid://b7h4nms2p6dlx" path="res://cenas_reutilizaveis/DialogBox.tscn" id="11_dlgbox"]
-[ext_resource type="Texture2D" uid="uid://d3qaeq408xjil" path="res://assets/backgrounds/tunel-perspectiva.jpeg" id="12_ycdy4"]
 [ext_resource type="PackedScene" uid="uid://dyxstgyjsb7g7" path="res://cenas_reutilizaveis/FadeLayer.tscn" id="13_ycdy4"]
 [ext_resource type="PackedScene" uid="uid://dstgffvb828kd" path="res://cenas_reutilizaveis/Door.tscn" id="14_w48qg"]
 [ext_resource type="Texture2D" uid="uid://cse5flpq5ckib" path="res://assets/backgrounds/red_flower_in_totem.png" id="16_w2cfx"]
@@ -162,7 +160,7 @@ texture = ExtResource("6_w48qg")
 centered = false
 
 [node name="Player" type="CharacterBody2D" parent="." unique_id=2052322699 groups=["player"]]
-z_index = 1
+z_index = 2
 position = Vector2(571, 580)
 scale = Vector2(2, 2)
 script = ExtResource("1_4c57u")
@@ -192,43 +190,21 @@ position = Vector2(577.125, 641)
 shape = SubResource("RectangleShape2D_dg77c")
 
 [node name="CenterDoor" parent="." unique_id=185453454 instance=ExtResource("14_w48qg")]
-
-[node name="Area2D" parent="CenterDoor" index="1" unique_id=2018634998]
-next_scene = "res://cenas_principais/caverna-verde.tscn"
-target_door_name = "TunelPerspectiva"
+position = Vector2(6, -20)
+cor_portal = Color(0.68272316, 0.10727175, 0.064280964, 0.36862746)
+next_scene = "res://cenas_principais/caverna-vermelha.tscn"
 
 [node name="LeftDoor" parent="." unique_id=1108002175 instance=ExtResource("14_w48qg")]
-position = Vector2(-496, 0)
-
-[node name="SpriteDoor" parent="LeftDoor" index="0" unique_id=625106910]
-position = Vector2(560, 586)
-scale = Vector2(0.9400001, 0.84)
-texture = ExtResource("10_w2cfx")
-
-[node name="Area2D" parent="LeftDoor" index="1" unique_id=2018634998]
+position = Vector2(-507, -18)
+cor_portal = Color(0.071554385, 0.45498663, 0.8670219, 0.42745098)
 next_scene = "res://cenas_principais/caverna-azul.tscn"
-target_door_name = "Tunel Perspectiva"
-
-[node name="CollisionShape2D" parent="LeftDoor/Area2D" index="0" unique_id=2139364499]
-position = Vector2(559.5156, 576.75)
 
 [node name="RightDoor" parent="." unique_id=253665186 instance=ExtResource("14_w48qg")]
-position = Vector2(130, 0)
-
-[node name="SpriteDoor" parent="RightDoor" index="0" unique_id=625106910]
-position = Vector2(936.25, 570.25)
-texture = ExtResource("12_ycdy4")
-flip_h = true
-
-[node name="Area2D" parent="RightDoor" index="1" unique_id=2018634998]
-next_scene = "res://cenas_principais/caverna-vermelha.tscn"
-target_door_name = "TunelPerspectiva"
-
-[node name="CollisionShape2D" parent="RightDoor/Area2D" index="0" unique_id=2139364499]
-position = Vector2(957, 579)
+position = Vector2(507, -21)
+cor_portal = Color(0.0652229, 0.831649, 0.3498875, 0.39215687)
+next_scene = "res://cenas_principais/caverna-verde.tscn"
 
 [node name="ColorFilter" parent="." unique_id=112233445 instance=ExtResource("18_cf")]
-visible = false
 
 [node name="FadeLayer" parent="." unique_id=985700339 instance=ExtResource("13_ycdy4")]
 position = Vector2(82, 24)
@@ -247,28 +223,21 @@ scale = Vector2(1.0000005, 1.0000005)
 shape = SubResource("RectangleShape2D_i30la")
 
 [node name="FlorVermelha" type="Sprite2D" parent="." unique_id=899100001]
-visible = false
 position = Vector2(839.0781, 591.1303)
 rotation = -3.1415927
 scale = Vector2(3.031815, 3.1464434)
 texture = ExtResource("16_w2cfx")
 
 [node name="FlorVerde" type="Sprite2D" parent="." unique_id=899100002]
-visible = false
 position = Vector2(839.00006, 603.6875)
 scale = Vector2(3.1249962, 3.5416622)
 texture = ExtResource("17_w2cfx")
 
 [node name="FlorAzul" type="Sprite2D" parent="." unique_id=899100003]
-visible = false
 position = Vector2(839, 615.9531)
 scale = Vector2(3.2708426, 3.3020856)
 texture = ExtResource("18_w2cfx")
 
 [node name="DialogBox" parent="." unique_id=1507620247 instance=ExtResource("11_dlgbox")]
-position = Vector2(-4, 10)
+position = Vector2(5, -5)
 som_proximo = ExtResource("20_08wae")
-
-[editable path="CenterDoor"]
-[editable path="LeftDoor"]
-[editable path="RightDoor"]
