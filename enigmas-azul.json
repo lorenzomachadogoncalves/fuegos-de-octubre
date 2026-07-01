@@ -1,32 +1,32 @@
 [
   {
-    "frase": "A: 'O sol é quente.' (verdadeiro)\nB: 'A neve é quente.' (falso)\nC: 'Gatos miam.' (verdadeiro)\nD: 'Peixes nadam.' (verdadeiro)\nQual expressão é VERDADEIRA?",
-    "correta": "¬B",
-    "opcoes": ["¬A", "¬B", "¬C", "¬D"]
+    "frase": "Regra: P → Q\nP: 'Borboletas têm asas.' (verdadeiro)\nQ: 'Borboletas podem voar.' (verdadeiro)\nDado que P é verdadeiro, o que se conclui?",
+    "correta": "Q é verdadeiro",
+    "opcoes": ["Q é verdadeiro", "Q é falso", "P é falso", "P ∧ Q é falso"]
   },
   {
-    "frase": "R: 'Elefantes são insetos.' (falso)\nS: 'Chuva molha.' (verdadeiro)\nT: 'Árvores têm raízes.' (verdadeiro)\nU: 'O mar é azul.' (verdadeiro)\nQual expressão é VERDADEIRA?",
-    "correta": "¬R",
-    "opcoes": ["¬R", "¬S", "¬T", "¬U"]
+    "frase": "Sabemos que A ∧ B é verdadeiro:\nA: 'Peixes nadam.'\nB: 'Pássaros voam.'\nO que podemos concluir?",
+    "correta": "A é verdadeiro",
+    "opcoes": ["A é verdadeiro", "A é falso", "¬B é verdadeiro", "A ∧ B é falso"]
   },
   {
-    "frase": "A: 'Pássaros têm asas.' (verdadeiro)\nB: 'Pedras flutuam no ar.' (falso)\nC: 'Cachorros rugem.' (falso)\nD: 'Leões voam.' (falso)\nQual expressão resulta em FALSO?",
-    "correta": "¬A",
-    "opcoes": ["¬A", "¬B", "¬C", "¬D"]
+    "frase": "Regra: R → S\nR: 'Está chovendo.' (verdadeiro)\nS: 'A rua está molhada.' (verdadeiro)\nDado que R é verdadeiro, o que se conclui?",
+    "correta": "S é verdadeiro",
+    "opcoes": ["S é verdadeiro", "S é falso", "R é falso", "R → S é falso"]
   },
   {
-    "frase": "R: 'Borboletas são répteis.' (falso)\nS: 'O gelo é frio.' (verdadeiro)\nT: 'Girassóis são flores.' (verdadeiro)\nU: 'Vacas têm quatro patas.' (verdadeiro)\nQual expressão é VERDADEIRA?",
-    "correta": "¬R",
-    "opcoes": ["¬R", "¬S", "¬T", "¬U"]
+    "frase": "Sabemos que P ∧ Q é verdadeiro:\nP: 'O gelo é frio.'\nQ: 'O fogo é quente.'\nO que podemos afirmar com certeza?",
+    "correta": "Q é verdadeiro",
+    "opcoes": ["Q é verdadeiro", "P é falso", "¬P é verdadeiro", "P ∧ Q é falso"]
   },
   {
-    "frase": "A: 'A lua brilha à noite.' (verdadeiro)\nB: 'Peixes vivem nas nuvens.' (falso)\nC: 'Triângulos têm quatro lados.' (falso)\nD: 'Cobras têm pernas.' (falso)\nQual expressão resulta em FALSO?",
-    "correta": "¬A",
-    "opcoes": ["¬A", "¬B", "¬C", "¬D"]
+    "frase": "Regra: A → B\nA: 'O pássaro tem asas.' (verdadeiro)\nB: 'O pássaro pode usá-las para voar.' (verdadeiro)\nDado que A é verdadeiro, o que se conclui?",
+    "correta": "B é verdadeiro",
+    "opcoes": ["B é verdadeiro", "A é falso", "B é falso", "¬A é verdadeiro"]
   },
   {
-    "frase": "R: 'Formigas são gigantes.' (falso)\nS: 'Água ferve a 100°C.' (verdadeiro)\nT: 'Rosas são flores.' (verdadeiro)\nU: 'O fogo é quente.' (verdadeiro)\nQual expressão é VERDADEIRA?",
-    "correta": "¬R",
-    "opcoes": ["¬R", "¬S", "¬T", "¬U"]
+    "frase": "Sabemos que R ∧ S é verdadeiro:\nR: 'Leões são mamíferos.'\nS: 'Galinhas botam ovos.'\nO que podemos concluir?",
+    "correta": "S é verdadeiro",
+    "opcoes": ["S é verdadeiro", "R é falso", "¬S é verdadeiro", "R ∧ S é falso"]
   }
 ]

@@ -1,0 +1,32 @@
+[
+  {
+    "frase": "A: 'O sol brilha.' (verdadeiro)\nB: 'Água ferve a 100°C.' (verdadeiro)\nC: 'Pinguins voam.' (falso)\nD: 'Pedras cantam.' (falso)\nQual opção é VERDADEIRA?",
+    "correta": "A e B são verdadeiras",
+    "opcoes": ["A e B são verdadeiras", "C ou D é verdadeira", "A e C são verdadeiras", "B e D são verdadeiras"]
+  },
+  {
+    "frase": "R: 'Elefantes são verdes.' (falso)\nS: 'Cobras têm pernas.' (falso)\nT: 'Galinhas botam ovos.' (verdadeiro)\nU: 'Girafas voam.' (falso)\nQual opção é VERDADEIRA?",
+    "correta": "R ou T é verdadeira",
+    "opcoes": ["R e S são verdadeiras", "R e T são verdadeiras", "S e U são verdadeiras", "R ou T é verdadeira"]
+  },
+  {
+    "frase": "A: 'Rosas são flores.' (verdadeiro)\nB: 'Abelhas são mamíferos.' (falso)\nC: 'Peixes vivem na água.' (verdadeiro)\nD: 'Cachorros miam.' (falso)\nQual opção é VERDADEIRA?",
+    "correta": "A e C são verdadeiras",
+    "opcoes": ["A e C são verdadeiras", "A e B são verdadeiras", "B ou D é verdadeira", "C e D são verdadeiras"]
+  },
+  {
+    "frase": "R: 'Borboletas são mamíferos.' (falso)\nS: 'Leões rugem.' (verdadeiro)\nT: 'Estrelas são frias.' (falso)\nU: 'Livros andam.' (falso)\nQual opção é VERDADEIRA?",
+    "correta": "S ou T é verdadeira",
+    "opcoes": ["R e S são verdadeiras", "R e T são verdadeiras", "T e U são verdadeiras", "S ou T é verdadeira"]
+  },
+  {
+    "frase": "A: 'Triângulos têm três lados.' (verdadeiro)\nB: 'Polvos são insetos.' (falso)\nC: 'Diamantes são macios.' (falso)\nD: 'Rios têm água.' (verdadeiro)\nQual opção é VERDADEIRA?",
+    "correta": "A e D são verdadeiras",
+    "opcoes": ["A e D são verdadeiras", "A e B são verdadeiras", "B ou C é verdadeira", "C e D são verdadeiras"]
+  },
+  {
+    "frase": "R: 'Cobras têm quatro pernas.' (falso)\nS: 'Pinguins sobem em árvores.' (falso)\nT: 'Tartarugas correm rápido.' (falso)\nU: 'Cachorros latem.' (verdadeiro)\nQual opção é VERDADEIRA?",
+    "correta": "R ou U é verdadeira",
+    "opcoes": ["R e U são verdadeiras", "S e U são verdadeiras", "S ou T é verdadeira", "R ou U é verdadeira"]
+  }
+]

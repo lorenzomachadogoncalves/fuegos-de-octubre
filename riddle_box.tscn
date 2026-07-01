@@ -58,16 +58,16 @@ script = ExtResource("1_udhur")
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1507817598]
 
 [node name="Panel" type="Panel" parent="CanvasLayer" unique_id=2132248763]
-offset_left = 201.0
-offset_top = 102.0
-offset_right = 966.0
-offset_bottom = 630.0
+offset_left = 11.0
+offset_top = 70.0
+offset_right = 1145.0
+offset_bottom = 643.0
 theme = SubResource("Theme_a3ewr")
 theme_override_styles/panel = SubResource("StyleBoxFlat_o3apd")
 
 [node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/Panel" unique_id=1256931406]
 layout_mode = 0
-offset_right = 764.0
+offset_right = 1131.0
 offset_bottom = 451.0
 
 [node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/Panel/MarginContainer" unique_id=449184927]

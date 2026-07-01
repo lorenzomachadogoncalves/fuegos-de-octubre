@@ -65,4 +65,25 @@ theme_override_fonts/font = ExtResource("2_font")
 theme_override_font_sizes/font_size = 24
 text = "Próximo"
 
+[node name="ChoiceContainer" type="HBoxContainer" parent="CanvasLayer/Panel/MarginContainer/VBoxContainer" unique_id=100000001]
+layout_mode = 2
+visible = false
+theme_override_constants/separation = 16
+
+[node name="BtnOpcao1" type="Button" parent="CanvasLayer/Panel/MarginContainer/VBoxContainer/ChoiceContainer" unique_id=100000002]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_fonts/font = ExtResource("2_font")
+theme_override_font_sizes/font_size = 22
+text = ""
+autowrap_mode = 3
+
+[node name="BtnOpcao2" type="Button" parent="CanvasLayer/Panel/MarginContainer/VBoxContainer/ChoiceContainer" unique_id=100000003]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_fonts/font = ExtResource("2_font")
+theme_override_font_sizes/font_size = 22
+text = ""
+autowrap_mode = 3
+
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="CanvasLayer" unique_id=883793439]

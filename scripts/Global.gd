@@ -14,6 +14,8 @@ var flor_vermelha = false
 
 var dialogos_vistos: Dictionary = {}
 
+var game_mode: String = "simbolos"
+
 var erros: int = 0
 var tem_flor_para_entregar: bool = false
 

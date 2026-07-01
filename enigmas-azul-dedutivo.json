@@ -1,0 +1,32 @@
+[
+  {
+    "frase": "Regra: SE borboletas têm asas, ENTÃO elas podem voar.\nBorboletas têm asas. (verdadeiro)\nO que podemos concluir?",
+    "correta": "Borboletas podem voar.",
+    "opcoes": ["Borboletas podem voar.", "Borboletas não podem voar.", "Borboletas não têm asas.", "Não podemos concluir nada."]
+  },
+  {
+    "frase": "Sabemos que AMBAS são verdadeiras:\n- 'Peixes nadam.'\n- 'Pássaros voam.'\nO que podemos concluir sobre os peixes?",
+    "correta": "Peixes nadam.",
+    "opcoes": ["Peixes nadam.", "Peixes não nadam.", "Pássaros não voam.", "Não podemos saber."]
+  },
+  {
+    "frase": "Regra: SE está chovendo, ENTÃO a rua fica molhada.\nEstá chovendo. (verdadeiro)\nO que podemos concluir?",
+    "correta": "A rua está molhada.",
+    "opcoes": ["A rua está molhada.", "A rua está seca.", "Não está chovendo.", "Não podemos saber."]
+  },
+  {
+    "frase": "Sabemos que AMBAS são verdadeiras:\n- 'O gelo é frio.'\n- 'O fogo é quente.'\nO que podemos afirmar sobre o fogo?",
+    "correta": "O fogo é quente.",
+    "opcoes": ["O fogo é quente.", "O fogo é frio.", "O gelo é quente.", "Não podemos saber."]
+  },
+  {
+    "frase": "Regra: SE um pássaro tem asas, ENTÃO ele pode usá-las para voar.\nO pássaro tem asas. (verdadeiro)\nO que se conclui?",
+    "correta": "O pássaro pode usar as asas para voar.",
+    "opcoes": ["O pássaro pode usar as asas para voar.", "O pássaro não tem asas.", "O pássaro não pode voar.", "Não podemos saber."]
+  },
+  {
+    "frase": "Sabemos que AMBAS são verdadeiras:\n- 'Leões são mamíferos.'\n- 'Galinhas botam ovos.'\nO que podemos concluir sobre as galinhas?",
+    "correta": "Galinhas botam ovos.",
+    "opcoes": ["Galinhas botam ovos.", "Galinhas são mamíferos.", "Leões botam ovos.", "Não podemos saber."]
+  }
+]

@@ -26,7 +26,6 @@ func _ready():
 	btn3.pressed.connect(func(): _on_resposta_pressed(btn3))
 	btn4.pressed.connect(func(): _on_resposta_pressed(btn4))
 	$CanvasLayer.hide()
-	enigmas = carregar_enigmas()
 	$CanvasLayer/Control/FlorAzul.visible = Global.flor_azul
 	$CanvasLayer/Control/FlorVerde.visible = Global.flor_verde
 	$CanvasLayer/Control/FlorVermelha.visible = Global.flor_vermelha
@@ -73,6 +72,7 @@ func _atualizar_titulo():
 	titulo.text = "%d / 3" % acertos
 
 func abrir():
+	enigmas = carregar_enigmas()
 	acertos = 0
 	titulo.text = "0 / 3"
 	gerar_enigma()

@@ -1,32 +1,32 @@
 [
   {
-    "frase": "R: 'Girafas são insetos.' (falso)\nS: 'Pedras cantam.' (falso)\nT: 'O fogo queima.' (verdadeiro)\nU: 'Livros andam.' (falso)\nQual expressão é VERDADEIRA?",
+    "frase": "A: 'O sol brilha.' (verdadeiro)\nB: 'Água ferve a 100°C.' (verdadeiro)\nC: 'Pinguins voam.' (falso)\nD: 'Pedras cantam.' (falso)\nQual expressão é VERDADEIRA?",
+    "correta": "A ∧ B",
+    "opcoes": ["A ∧ B", "C ∨ D", "A ∧ C", "B ∧ D"]
+  },
+  {
+    "frase": "R: 'Elefantes são verdes.' (falso)\nS: 'Cobras têm pernas.' (falso)\nT: 'Galinhas botam ovos.' (verdadeiro)\nU: 'Girafas voam.' (falso)\nQual expressão é VERDADEIRA?",
     "correta": "R ∨ T",
-    "opcoes": ["R ∨ S", "R ∨ T", "S ∨ U", "R ∨ U"]
+    "opcoes": ["R ∧ S", "R ∧ T", "S ∧ U", "R ∨ T"]
   },
   {
-    "frase": "A: 'Elefantes voam.' (falso)\nB: 'Flores crescem.' (verdadeiro)\nC: 'Estrelas são frias.' (falso)\nD: 'Peixes sobem em árvores.' (falso)\nQual expressão é VERDADEIRA?",
-    "correta": "A ∨ B",
-    "opcoes": ["A ∨ C", "A ∨ B", "C ∨ D", "A ∨ D"]
+    "frase": "A: 'Rosas são flores.' (verdadeiro)\nB: 'Abelhas são mamíferos.' (falso)\nC: 'Peixes vivem na água.' (verdadeiro)\nD: 'Cachorros miam.' (falso)\nQual expressão é VERDADEIRA?",
+    "correta": "A ∧ C",
+    "opcoes": ["A ∧ C", "A ∧ B", "B ∨ D", "C ∧ D"]
   },
   {
-    "frase": "R: 'Cobras têm asas.' (falso)\nS: 'Cavalos são minúsculos.' (falso)\nT: 'Galinhas botam ovos.' (verdadeiro)\nU: 'Abelhas são mamíferos.' (falso)\nQual expressão é VERDADEIRA?",
-    "correta": "R ∨ T",
-    "opcoes": ["R ∨ S", "S ∨ U", "R ∨ T", "R ∨ U"]
+    "frase": "R: 'Borboletas são mamíferos.' (falso)\nS: 'Leões rugem.' (verdadeiro)\nT: 'Estrelas são frias.' (falso)\nU: 'Livros andam.' (falso)\nQual expressão é VERDADEIRA?",
+    "correta": "S ∨ T",
+    "opcoes": ["R ∧ S", "R ∧ T", "T ∧ U", "S ∨ T"]
   },
   {
-    "frase": "A: 'Pinguins nadam.' (verdadeiro)\nB: 'Nuvens são sólidas.' (falso)\nC: 'Cachorros miam.' (falso)\nD: 'Sorvete é salgado.' (falso)\nQual expressão é VERDADEIRA?",
-    "correta": "A ∨ D",
-    "opcoes": ["B ∨ C", "B ∨ D", "A ∨ D", "C ∨ D"]
+    "frase": "A: 'Triângulos têm três lados.' (verdadeiro)\nB: 'Polvos são insetos.' (falso)\nC: 'Diamantes são macios.' (falso)\nD: 'Rios têm água.' (verdadeiro)\nQual expressão é VERDADEIRA?",
+    "correta": "A ∧ D",
+    "opcoes": ["A ∧ D", "A ∧ B", "B ∨ C", "C ∧ D"]
   },
   {
-    "frase": "R: 'Tartarugas são velozes.' (falso)\nS: 'Leões rugem.' (verdadeiro)\nT: 'Borboletas são peixes.' (falso)\nU: 'Diamantes são macios.' (falso)\nQual expressão é VERDADEIRA?",
-    "correta": "R ∨ S",
-    "opcoes": ["R ∨ T", "R ∨ U", "T ∨ U", "R ∨ S"]
-  },
-  {
-    "frase": "A: 'Árvores têm folhas.' (verdadeiro)\nB: 'Pedras cantam.' (falso)\nC: 'Polvos são insetos.' (falso)\nD: 'Montanhas são planas.' (falso)\nQual expressão é VERDADEIRA?",
-    "correta": "A ∨ B",
-    "opcoes": ["B ∨ C", "B ∨ D", "C ∨ D", "A ∨ B"]
+    "frase": "R: 'Cobras têm quatro pernas.' (falso)\nS: 'Pinguins sobem em árvores.' (falso)\nT: 'Tartarugas correm rápido.' (falso)\nU: 'Cachorros latem.' (verdadeiro)\nQual expressão é VERDADEIRA?",
+    "correta": "R ∨ U",
+    "opcoes": ["R ∧ U", "S ∧ U", "S ∨ T", "R ∨ U"]
   }
 ]
