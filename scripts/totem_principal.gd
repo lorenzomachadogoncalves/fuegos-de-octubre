@@ -2,6 +2,22 @@ extends Area2D
 
 var _processando := false
 
+const _DIALOGO_ANUNCIO_FINAL := [
+	"...",
+	"Então você trouxe as três flores. Achei que nunca chegaria até aqui.",
+	"Mas o mundo ainda não está completo. Cores não bastam — é preciso provar que você entende o que as gerou.",
+	"Negação. Conjunção. Disjunção. Inferência. Decomposição.",
+	"O terminal final está diante de você. Três respostas corretas. Sem mais chances.",
+	"Mostre que valeu a pena.",
+]
+
+const _DIALOGO_VITORIA := [
+	"...",
+	"Impossível. Você realmente fez isso.",
+	"As cores voltaram. O mundo respira de novo.",
+	"Talvez você seja digno de habitá-lo, afinal.",
+]
+
 func _ready():
 	_restaurar_flores()
 
@@ -37,6 +53,12 @@ func _colocar_flores():
 		"red":   "res://assets/objects/red-flower.png",
 	}
 
+	var tudo_completo = (
+		(Global.flor_azul     or Global.color_channels["blue"]  > 0.0) and
+		(Global.flor_verde    or Global.color_channels["green"] > 0.0) and
+		(Global.flor_vermelha or Global.color_channels["red"]   > 0.0)
+	)
+
 	var pendentes := []
 	if Global.flor_azul     and Global.color_channels["blue"]  < 1.0:
 		pendentes.append(["blue",  "FlorAzul"])
@@ -64,25 +86,65 @@ func _colocar_flores():
 
 	await get_tree().create_timer(1.8).timeout
 
+	Global.tem_flor_para_entregar = false
 	var dialog = cena.get_node_or_null("DialogBox")
+
+	if dialog:
+		if tudo_completo and not Global.dialogos_vistos.get("desafio_final_concluido", false):
+			dialog.terminou.connect(_iniciar_desafio_final.bind(player), CONNECT_ONE_SHOT)
+			dialog.mostrar(_DIALOGO_ANUNCIO_FINAL)
+		else:
+			dialog.terminou.connect(func():
+				player.can_move = true
+				_processando = false
+			, CONNECT_ONE_SHOT)
+			dialog.mostrar([
+				"A cor voltou... pelo menos um pouco.",
+				"O totem absorveu o que você trouxe. O mundo respira novamente, por enquanto.",
+				"Se ainda houver cavernas por explorar, o caminho está aberto.",
+			])
+	else:
+		player.can_move = true
+		_processando = false
+
+func _iniciar_desafio_final(player: Node) -> void:
+	var cena = get_tree().current_scene
+	var riddle_box = cena.get_node_or_null("RiddleBox")
+	if riddle_box == null:
+		player.can_move = true
+		_processando = false
+		return
+	var caminho = "res://enigmas-final-dedutivo.json" if Global.game_mode == "dedutivo" \
+				  else "res://enigmas-final.json"
+	riddle_box.caminho_enigmas = caminho
+	riddle_box.recompensa = "final"
+	riddle_box.totem = null
+	riddle_box.desafio_final_concluido.connect(
+		_on_desafio_final_concluido.bind(player), CONNECT_ONE_SHOT
+	)
+	riddle_box.abrir()
+
+func _on_desafio_final_concluido(player: Node) -> void:
+	var cena = get_tree().current_scene
+	var dialog = cena.get_node_or_null("DialogBox")
+	Global.dialogos_vistos["desafio_final_concluido"] = true
 	if dialog:
 		dialog.terminou.connect(func():
 			player.can_move = true
-			Global.tem_flor_para_entregar = false
 			_processando = false
 		, CONNECT_ONE_SHOT)
-		dialog.mostrar([
-			"A cor voltou... pelo menos um pouco.",
-			"O totem absorveu o que você trouxe. O mundo respira novamente, por enquanto.",
-			"Se ainda houver cavernas por explorar, o caminho está aberto.",
-		])
+		dialog.mostrar(_DIALOGO_VITORIA)
 	else:
 		player.can_move = true
-		Global.tem_flor_para_entregar = false
 		_processando = false
 
 func _restaurar_flores():
 	var cena = get_tree().current_scene
-	if Global.color_channels["blue"]  >= 1.0: cena.get_node("FlorAzul").show()
-	if Global.color_channels["green"] >= 1.0: cena.get_node("FlorVerde").show()
-	if Global.color_channels["red"]   >= 1.0: cena.get_node("FlorVermelha").show()
+	var color_filter = cena.get_node_or_null("ColorFilter")
+	for entry in [["blue", "FlorAzul"], ["green", "FlorVerde"], ["red", "FlorVermelha"]]:
+		var cor: String = entry[0]
+		var nome: String = entry[1]
+		if Global.color_channels[cor] > 0.0:
+			if color_filter and Global.color_channels[cor] < 1.0:
+				color_filter.unlock_color(cor)
+			cena.get_node(nome).show()

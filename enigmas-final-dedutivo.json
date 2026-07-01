@@ -1,0 +1,32 @@
+[
+  {
+    "frase": "P: 'O fogo é quente.' (verdadeiro)\nQ: 'A neve é fria.' (verdadeiro)\nR: 'Pássaros nadam.' (falso)\nQual opção é VERDADEIRA?",
+    "correta": "NÃO R é verdadeiro",
+    "opcoes": ["NÃO P é verdadeiro", "NÃO R é verdadeiro", "NÃO Q é verdadeiro", "P e R são verdadeiros"]
+  },
+  {
+    "frase": "A: 'Triângulos têm três lados.' (verdadeiro)\nB: 'Cobras têm asas.' (falso)\nC: 'O sol brilha.' (verdadeiro)\nD: 'Pedras voam.' (falso)\nQual opção é VERDADEIRA?",
+    "correta": "A e C são verdadeiras",
+    "opcoes": ["A e C são verdadeiras", "A e B são verdadeiras", "B ou D é verdadeira", "NÃO A é verdadeiro"]
+  },
+  {
+    "frase": "R: 'Leões são insetos.' (falso)\nS: 'Peixes vivem na água.' (verdadeiro)\nT: 'Girafas têm pescoço comprido.' (verdadeiro)\nU: 'Nuvens são de pedra.' (falso)\nQual opção é VERDADEIRA?",
+    "correta": "R ou S é verdadeira",
+    "opcoes": ["R e S são verdadeiras", "R ou S é verdadeira", "R e U são verdadeiras", "NÃO S é verdadeiro"]
+  },
+  {
+    "frase": "Regra: SE está nevando, ENTÃO está frio.\nEstá nevando. (verdadeiro)\nO que podemos concluir?",
+    "correta": "Está frio.",
+    "opcoes": ["Está frio.", "Não está frio.", "Não está nevando.", "Não podemos concluir nada."]
+  },
+  {
+    "frase": "Sabemos que AMBAS são verdadeiras:\n- 'Rosas são flores.'\n- 'Água molha.'\nO que podemos concluir com certeza sobre a água?",
+    "correta": "Água molha.",
+    "opcoes": ["Água molha.", "Água não molha.", "Rosas não são flores.", "Não podemos saber."]
+  },
+  {
+    "frase": "P: 'Cachorros latem.' (verdadeiro)\nQ: 'Gatos voam.' (falso)\nR: 'Polvos vivem no mar.' (verdadeiro)\nS: 'Leões têm penas.' (falso)\nQual opção é VERDADEIRA?",
+    "correta": "P e R são verdadeiros",
+    "opcoes": ["P e R são verdadeiros", "Q ou S é verdadeira", "P e Q são verdadeiros", "NÃO P é verdadeiro"]
+  }
+]

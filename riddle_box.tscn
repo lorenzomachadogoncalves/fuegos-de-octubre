@@ -68,7 +68,7 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_o3apd")
 [node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/Panel" unique_id=1256931406]
 layout_mode = 0
 offset_right = 1131.0
-offset_bottom = 451.0
+offset_bottom = 520.0
 
 [node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/Panel/MarginContainer" unique_id=449184927]
 layout_mode = 2
@@ -90,61 +90,66 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Control" type="Control" parent="CanvasLayer/Panel/MarginContainer/VBoxContainer" unique_id=1758553027]
-custom_minimum_size = Vector2(0, 60)
+custom_minimum_size = Vector2(0, 25)
 layout_mode = 2
 
-[node name="CenterContainer" type="CenterContainer" parent="CanvasLayer/Panel/MarginContainer/VBoxContainer" unique_id=990165471]
+[node name="GridContainer" type="GridContainer" parent="CanvasLayer/Panel/MarginContainer/VBoxContainer" unique_id=609306762]
 layout_mode = 2
-
-[node name="GridContainer" type="GridContainer" parent="CanvasLayer/Panel/MarginContainer/VBoxContainer/CenterContainer" unique_id=609306762]
-custom_minimum_size = Vector2(500, 0)
-layout_mode = 2
+size_flags_horizontal = 3
 theme_override_constants/h_separation = 25
 theme_override_constants/v_separation = 25
 columns = 2
 
-[node name="Button" type="Button" parent="CanvasLayer/Panel/MarginContainer/VBoxContainer/CenterContainer/GridContainer" unique_id=1018862207]
+[node name="Button" type="Button" parent="CanvasLayer/Panel/MarginContainer/VBoxContainer/GridContainer" unique_id=1018862207]
+custom_minimum_size = Vector2(0, 80)
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_fonts/font = ExtResource("1_cn1i6")
-theme_override_font_sizes/font_size = 36
+theme_override_font_sizes/font_size = 26
 theme_override_styles/normal = SubResource("StyleBoxFlat_0fu26")
 theme_override_styles/hover = SubResource("StyleBoxFlat_qdl6y")
 text = "P ∨ Q"
 icon_alignment = 1
+autowrap_mode = 3
 vertical_icon_alignment = 2
 
-[node name="Button2" type="Button" parent="CanvasLayer/Panel/MarginContainer/VBoxContainer/CenterContainer/GridContainer" unique_id=1128972326]
+[node name="Button2" type="Button" parent="CanvasLayer/Panel/MarginContainer/VBoxContainer/GridContainer" unique_id=1128972326]
+custom_minimum_size = Vector2(0, 80)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 theme_override_fonts/font = ExtResource("1_cn1i6")
-theme_override_font_sizes/font_size = 36
+theme_override_font_sizes/font_size = 26
 theme_override_styles/normal = SubResource("StyleBoxFlat_s8kdk")
 theme_override_styles/hover = SubResource("StyleBoxFlat_eitay")
 text = "¬P"
+autowrap_mode = 3
 vertical_icon_alignment = 2
 
-[node name="Button3" type="Button" parent="CanvasLayer/Panel/MarginContainer/VBoxContainer/CenterContainer/GridContainer" unique_id=1041632944]
+[node name="Button3" type="Button" parent="CanvasLayer/Panel/MarginContainer/VBoxContainer/GridContainer" unique_id=1041632944]
+custom_minimum_size = Vector2(0, 80)
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_fonts/font = ExtResource("1_cn1i6")
-theme_override_font_sizes/font_size = 36
+theme_override_font_sizes/font_size = 26
 theme_override_styles/normal = SubResource("StyleBoxFlat_0qaok")
 theme_override_styles/hover = SubResource("StyleBoxFlat_m0wdt")
 text = "P ∧ Q"
+autowrap_mode = 3
 vertical_icon_alignment = 2
 
-[node name="Button4" type="Button" parent="CanvasLayer/Panel/MarginContainer/VBoxContainer/CenterContainer/GridContainer" unique_id=545129028]
+[node name="Button4" type="Button" parent="CanvasLayer/Panel/MarginContainer/VBoxContainer/GridContainer" unique_id=545129028]
+custom_minimum_size = Vector2(0, 80)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 theme_override_colors/icon_hover_pressed_color = Color(0.8631568, 0.96287745, 0.80908483, 1)
 theme_override_fonts/font = ExtResource("1_cn1i6")
-theme_override_font_sizes/font_size = 36
+theme_override_font_sizes/font_size = 26
 theme_override_styles/normal = SubResource("StyleBoxFlat_jykrg")
 theme_override_styles/hover = SubResource("StyleBoxFlat_a3ewr")
 text = "P → Q"
+autowrap_mode = 3
 vertical_icon_alignment = 2
 
 [node name="Control" type="Control" parent="CanvasLayer" unique_id=1340485605]

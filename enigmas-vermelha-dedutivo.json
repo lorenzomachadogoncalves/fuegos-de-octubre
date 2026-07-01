@@ -1,32 +1,32 @@
 [
   {
-    "frase": "A: 'O sol é quente.' (verdadeiro)\nB: 'A neve é quente.' (falso)\nC: 'Gatos miam.' (verdadeiro)\nD: 'Peixes nadam.' (verdadeiro)\nQual expressão é VERDADEIRA?",
-    "correta": "NÃO B é verdadeiro",
-    "opcoes": ["NÃO A é verdadeiro", "NÃO B é verdadeiro", "NÃO C é verdadeiro", "NÃO D é verdadeiro"]
+	"frase": "A: 'O sol é quente.' (verdadeiro)\nB: 'A neve é quente.' (falso)\nC: 'Gatos miam.' (verdadeiro)\nD: 'Peixes nadam.' (verdadeiro)\nQual expressão é VERDADEIRA?",
+	"correta": "NÃO B é verdadeiro",
+	"opcoes": ["NÃO A é verdadeiro", "NÃO B é verdadeiro", "NÃO C é verdadeiro", "NÃO D é verdadeiro"]
   },
   {
-    "frase": "R: 'Elefantes são insetos.' (falso)\nS: 'Chuva molha.' (verdadeiro)\nT: 'Árvores têm raízes.' (verdadeiro)\nU: 'O mar é azul.' (verdadeiro)\nQual expressão é VERDADEIRA?",
-    "correta": "NÃO R é verdadeiro",
-    "opcoes": ["NÃO R é verdadeiro", "NÃO S é verdadeiro", "NÃO T é verdadeiro", "NÃO U é verdadeiro"]
+	"frase": "R: 'Elefantes são insetos.' (falso)\nS: 'Chuva molha.' (verdadeiro)\nT: 'Árvores têm raízes.' (verdadeiro)\nU: 'O mar é azul.' (verdadeiro)\nQual expressão é VERDADEIRA?",
+	"correta": "NÃO R é verdadeiro",
+	"opcoes": ["NÃO R é verdadeiro", "NÃO S é verdadeiro", "NÃO T é verdadeiro", "NÃO U é verdadeiro"]
   },
   {
-    "frase": "A: 'Pássaros têm asas.' (verdadeiro)\nB: 'Pedras flutuam no ar.' (falso)\nC: 'Cachorros rugem.' (falso)\nD: 'Leões voam.' (falso)\nQual expressão resulta em FALSO?",
-    "correta": "NÃO A é verdadeiro",
-    "opcoes": ["NÃO A é verdadeiro", "NÃO B é verdadeiro", "NÃO C é verdadeiro", "NÃO D é verdadeiro"]
+	"frase": "A: 'Pássaros têm asas.' (verdadeiro)\nB: 'Pedras flutuam no ar.' (falso)\nC: 'Cachorros rugem.' (falso)\nD: 'Leões voam.' (falso)\nQual expressão resulta em FALSO?",
+	"correta": "NÃO A é verdadeiro",
+	"opcoes": ["NÃO A é verdadeiro", "NÃO B é verdadeiro", "NÃO C é verdadeiro", "NÃO D é verdadeiro"]
   },
   {
-    "frase": "R: 'Borboletas são répteis.' (falso)\nS: 'O gelo é frio.' (verdadeiro)\nT: 'Girassóis são flores.' (verdadeiro)\nU: 'Vacas têm quatro patas.' (verdadeiro)\nQual expressão é VERDADEIRA?",
-    "correta": "NÃO R é verdadeiro",
-    "opcoes": ["NÃO R é verdadeiro", "NÃO S é verdadeiro", "NÃO T é verdadeiro", "NÃO U é verdadeiro"]
+	"frase": "R: 'Borboletas são répteis.' (falso)\nS: 'O gelo é frio.' (verdadeiro)\nT: 'Girassóis são flores.' (verdadeiro)\nU: 'Vacas têm quatro patas.' (verdadeiro)\nQual expressão é VERDADEIRA?",
+	"correta": "NÃO R é verdadeiro",
+	"opcoes": ["NÃO R é verdadeiro", "NÃO S é verdadeiro", "NÃO T é verdadeiro", "NÃO U é verdadeiro"]
   },
   {
-    "frase": "A: 'A lua brilha à noite.' (verdadeiro)\nB: 'Peixes vivem nas nuvens.' (falso)\nC: 'Triângulos têm quatro lados.' (falso)\nD: 'Cobras têm pernas.' (falso)\nQual expressão resulta em FALSO?",
-    "correta": "NÃO A é verdadeiro",
-    "opcoes": ["NÃO A é verdadeiro", "NÃO B é verdadeiro", "NÃO C é verdadeiro", "NÃO D é verdadeiro"]
+	"frase": "A: 'A lua brilha à noite.' (verdadeiro)\nB: 'Peixes vivem nas nuvens.' (falso)\nC: 'Triângulos têm quatro lados.' (falso)\nD: 'Cobras têm pernas.' (falso)\nQual expressão resulta em FALSO?",
+	"correta": "NÃO A é verdadeiro",
+	"opcoes": ["NÃO A é verdadeiro", "NÃO B é verdadeiro", "NÃO C é verdadeiro", "NÃO D é verdadeiro"]
   },
   {
-    "frase": "R: 'Formigas são gigantes.' (falso)\nS: 'Água ferve a 100°C.' (verdadeiro)\nT: 'Rosas são flores.' (verdadeiro)\nU: 'O fogo é quente.' (verdadeiro)\nQual expressão é VERDADEIRA?",
-    "correta": "NÃO R é verdadeiro",
-    "opcoes": ["NÃO R é verdadeiro", "NÃO S é verdadeiro", "NÃO T é verdadeiro", "NÃO U é verdadeiro"]
+	"frase": "R: 'Formigas são gigantes.' (falso)\nS: 'Água ferve a 100°C.' (verdadeiro)\nT: 'Rosas são flores.' (verdadeiro)\nU: 'O fogo é quente.' (verdadeiro)\nQual expressão é VERDADEIRA?",
+	"correta": "NÃO R é verdadeiro",
+	"opcoes": ["NÃO R é verdadeiro", "NÃO S é verdadeiro", "NÃO T é verdadeiro", "NÃO U é verdadeiro"]
   }
 ]

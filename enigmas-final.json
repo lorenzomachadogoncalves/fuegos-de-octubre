@@ -1,0 +1,32 @@
+[
+  {
+    "frase": "P: 'O fogo é quente.' (verdadeiro)\nQ: 'A neve é fria.' (verdadeiro)\nR: 'Pássaros nadam.' (falso)\nQual expressão é VERDADEIRA?",
+    "correta": "¬R",
+    "opcoes": ["¬P", "¬R", "¬Q", "P ∧ R"]
+  },
+  {
+    "frase": "A: 'Triângulos têm três lados.' (verdadeiro)\nB: 'Cobras têm asas.' (falso)\nC: 'O sol brilha.' (verdadeiro)\nD: 'Pedras voam.' (falso)\nQual expressão é VERDADEIRA?",
+    "correta": "A ∧ C",
+    "opcoes": ["A ∧ C", "A ∧ B", "B ∨ D", "¬A"]
+  },
+  {
+    "frase": "R: 'Leões são insetos.' (falso)\nS: 'Peixes vivem na água.' (verdadeiro)\nT: 'Girafas têm pescoço comprido.' (verdadeiro)\nU: 'Nuvens são de pedra.' (falso)\nQual expressão é VERDADEIRA?",
+    "correta": "R ∨ S",
+    "opcoes": ["R ∧ S", "R ∨ S", "R ∧ U", "¬S"]
+  },
+  {
+    "frase": "Regra: P → Q\nP: 'Está nevando.' (verdadeiro)\nQ: 'Está frio.' (verdadeiro)\nDado que P é verdadeiro, o que se conclui?",
+    "correta": "Q é verdadeiro",
+    "opcoes": ["Q é verdadeiro", "Q é falso", "¬P é verdadeiro", "P ∧ Q é falso"]
+  },
+  {
+    "frase": "Sabemos que A ∧ B é verdadeiro:\nA: 'Rosas são flores.'\nB: 'Água molha.'\nO que podemos concluir com certeza?",
+    "correta": "B é verdadeiro",
+    "opcoes": ["B é verdadeiro", "A é falso", "¬B é verdadeiro", "A ∧ B é falso"]
+  },
+  {
+    "frase": "P: 'Cachorros latem.' (verdadeiro)\nQ: 'Gatos voam.' (falso)\nR: 'Polvos vivem no mar.' (verdadeiro)\nS: 'Leões têm penas.' (falso)\nQual expressão é VERDADEIRA?",
+    "correta": "P ∧ R",
+    "opcoes": ["P ∧ R", "Q ∨ S", "P ∧ Q", "¬P"]
+  }
+]
