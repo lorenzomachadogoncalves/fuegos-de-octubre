@@ -140,9 +140,10 @@ position = Vector2(533, 3)
 cor_portal = Color(0.1764706, 0.9098039, 0, 0.5058824)
 next_scene = "res://cenas_principais/main.tscn"
 
-[node name="Totem" parent="." unique_id=142172213 instance=ExtResource("11_wlll7")]
+[node name="Totem" parent="." unique_id=142172213 node_paths=PackedStringArray("riddle_box") instance=ExtResource("11_wlll7")]
 position = Vector2(655, 574)
 scale = Vector2(2, 2)
+riddle_box = NodePath("../RiddleBox")
 cor = "verde"
 
 [node name="CollisionShape2D" parent="Totem" index="0" unique_id=2021860395]

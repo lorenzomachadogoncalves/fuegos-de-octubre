@@ -134,3 +134,4 @@ func mostrar_recompensa():
 func _fechar_apos_dialogo(jogador: Node) -> void:
 	$CanvasLayer.hide()
 	jogador.can_move = true
+	Global.tem_flor_para_entregar = true

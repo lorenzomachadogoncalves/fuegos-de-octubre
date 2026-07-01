@@ -15,6 +15,7 @@ var flor_vermelha = false
 var dialogos_vistos: Dictionary = {}
 
 var erros: int = 0
+var tem_flor_para_entregar: bool = false
 
 var _musica: AudioStreamPlayer
 var _stream_atual: AudioStream = null
@@ -75,6 +76,7 @@ func game_over():
 	flor_azul = false
 	flor_verde = false
 	flor_vermelha = false
+	tem_flor_para_entregar = false
 	color_channels["red"] = 0.0
 	color_channels["green"] = 0.0
 	color_channels["blue"] = 0.0

@@ -23,3 +23,12 @@ func refresh() -> void:
 func unlock_color(color: String) -> void:
 	Global.color_channels[color] = 1.0
 	refresh()
+
+func unlock_color_animado(color: String, duracao: float = 1.5) -> void:
+	var tween = create_tween()
+	tween.tween_method(_set_canal.bind(color), 0.0, 1.0, duracao)
+	await tween.finished
+
+func _set_canal(valor: float, color: String) -> void:
+	Global.color_channels[color] = valor
+	refresh()
